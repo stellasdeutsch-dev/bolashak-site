@@ -5,89 +5,202 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Нет соединения · Bolashak</title>
 <style>
-:root{--ind:#384899;--deep:#27346f;--sun:#FFC629;--ink:#0e1230;--mute:#5b6178;--line:#dfe3ef;--paper:#f3f5fb}
+:root{--ind:#384899;--deep:#27346f;--sun:#FFC629;--ink:#0e1230;--mute:#5b6178;--line:#dfe3ef;--paper:#f3f5fb;--soft:#c9d0ee}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:#fff;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column}
 .head{background:var(--ind);color:#fff;padding:28px 20px 32px}
 .wrap{max-width:960px;margin:0 auto;width:100%}
 h1{margin:0 0 8px;font-size:clamp(26px,5vw,40px);line-height:1.15}
-.head p{margin:0;color:#dfe4ff;max-width:60ch}
+.head p{margin:0;color:#dfe4ff;max-width:62ch}
 main{flex:1;padding:24px 20px 40px}
-.card{border:1px solid var(--line);border-radius:12px;padding:clamp(16px,3vw,28px);display:grid;gap:16px}
+.card{border:1px solid var(--line);border-radius:12px;padding:clamp(16px,3vw,28px);display:grid;gap:14px;min-width:0}
 .task{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:600}
-.task span{padding:6px 12px;border-radius:12px;background:var(--paper)}
-.task span.done{background:var(--ind);color:#fff}
+.task b{padding:6px 12px;border-radius:12px;background:var(--ind);color:#fff}
+.task b.goal{background:var(--sun);color:var(--ink)}
 .task i{font-style:normal;color:var(--mute)}
-svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:12px;touch-action:manipulation}
-.grid line{stroke:#e7eaf5;stroke-width:1}
-.city{cursor:pointer}.city circle{fill:#fff;stroke:var(--ind);stroke-width:3;transition:r .15s}
-.city text{font:600 13px system-ui,sans-serif;fill:var(--ink);pointer-events:none}
-.city.is-start circle,.city.is-hit circle{fill:var(--ind)}
-.city.is-next circle{stroke:var(--sun);stroke-width:4}
-.city.is-miss{animation:miss .3s}
+.task .sum{margin-left:auto;color:var(--mute)}
+.hint{margin:0;color:var(--mute);font-size:15px}
+.scroll{overflow-x:auto;border-radius:12px;-webkit-overflow-scrolling:touch}
+svg{display:block;width:100%;height:auto;background:var(--paper);touch-action:manipulation}
+.road{stroke:#b9c0da;stroke-width:2}
+.road.can{stroke:var(--ind);stroke-width:2.5}
+.km rect{fill:#fff}.km text{font:600 14px system-ui,sans-serif;fill:var(--mute);text-anchor:middle}
+.city{cursor:pointer;outline:none}
+.city rect{fill:#fff;stroke:var(--ink);stroke-width:2.5}
+.city .ring{fill:none;stroke:transparent;stroke-width:3}
+.city text{font:600 15px system-ui,sans-serif;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+.city.on rect{fill:var(--ind);stroke:var(--ind)}
+.city.goal rect{fill:var(--sun);stroke:var(--ink)}
+.city.can .ring{stroke:var(--sun)}
+.city:focus-visible .ring{stroke:var(--ink)}
+.city.miss{animation:miss .3s}
 @keyframes miss{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-.fly{fill:none;stroke:var(--ind);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .6s ease-out forwards}
+.mine{stroke:var(--ind);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .45s ease-out forwards}
+.best{stroke:var(--sun);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .6s ease-out forwards}
+.seen{stroke:var(--soft);stroke-width:5;stroke-linecap:round}
 @keyframes fly{to{stroke-dashoffset:0}}
+.tag rect{fill:var(--ink)}.tag text{font:700 13px system-ui,sans-serif;fill:#fff;text-anchor:middle}
+.tag{animation:pop .25s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(4px)}}
+.result{display:none;gap:10px;background:var(--paper);border-radius:12px;padding:14px 16px}
+.result.show{display:grid}
+.result p{margin:0}.result strong{font-size:18px}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 .score{color:var(--mute);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
 button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:12px;border:1px solid transparent;cursor:pointer}
 .go{background:var(--ink);color:#fff}.go:hover{background:var(--ind)}
-.ghost{background:#fff;border-color:var(--line);color:var(--ink)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fly{stroke-dashoffset:0}}
+.ghost{background:#fff;border-color:var(--line);color:var(--ink)}.ghost:hover{border-color:var(--ind);color:var(--ind)}
+.result .ghost{justify-self:start}
+@media(max-width:520px){.btns,.btns button{width:100%}}
+@media(max-width:700px){svg{min-width:640px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mine,.best{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
-<header class="head"><div class="wrap"><h1 data-t="title">Нет соединения</h1><p data-t="lead">Страница откроется, когда интернет вернётся. Пока можно проложить маршрут: нажимайте города по порядку.</p></div></header>
+<header class="head"><div class="wrap"><h1 data-t="title">Нет соединения</h1><p data-t="lead"></p></div></header>
 <main><div class="wrap card">
   <div class="task" id="task" aria-live="polite"></div>
-  <svg id="map" viewBox="0 0 800 400" role="img" aria-label="Карта городов"></svg>
-  <div class="row"><span class="score" id="score"></span><span><button class="ghost" id="skip" type="button" data-t="skip">Другой маршрут</button> <button class="go" id="retry" type="button" data-t="retry">Проверить соединение</button></span></div>
+  <p class="hint" data-t="hint"></p>
+  <div class="scroll" id="scroll"><svg id="map" viewBox="0 0 920 490" role="group"></svg></div>
+  <div class="result" id="result" aria-live="polite"><p id="verdict"></p><button class="ghost" id="how" type="button" data-t="how"></button><p id="explain" hidden data-t="explain"></p></div>
+  <div class="row"><span class="score" id="score"></span><span class="btns"><button class="ghost" id="again" type="button" data-t="again"></button><button class="ghost" id="skip" type="button" data-t="skip"></button><button class="go" id="retry" type="button" data-t="retry"></button></span></div>
 </div></main>
 <script>
 (() => {
   const L = (location.pathname.match(/\/(ru|kz|en)(\/|$)/) || [, 'ru'])[1]
   const T = {
-    ru: { title: 'Нет соединения', lead: 'Страница откроется, когда интернет вернётся. Пока можно проложить маршрут: нажимайте города по порядку.', skip: 'Другой маршрут', retry: 'Проверить соединение', score: 'Маршрутов проложено', map: 'Карта городов' },
-    kz: { title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда бет ашылады. Әзірге бағыт салып көріңіз: қалаларды ретімен басыңыз.', skip: 'Басқа бағыт', retry: 'Байланысты тексеру', score: 'Салынған бағыттар', map: 'Қалалар картасы' },
-    en: { title: 'No connection', lead: 'The page will open once you are back online. Meanwhile, plot a route: tap the cities in order.', skip: 'Another route', retry: 'Check connection', score: 'Routes completed', map: 'Map of cities' },
+    ru: { title: 'Нет соединения', lead: 'Страница откроется, когда интернет вернётся. А пока задача: долететь из Астаны в другой город самым коротким путём.', hint: 'Нажимайте города, соединённые линией с тем, где вы сейчас. Числа на линиях: расстояние в тысячах километров.', yours: 'Ваш путь', unit: 'тыс. км', best: 'Это самый короткий путь. Отлично!', longer: 'Есть путь короче', how: 'Как ищет компьютер', explain: 'Компьютер не угадывает. Он идёт от Астаны во все стороны и всегда сначала проверяет самый близкий город. Число у города: самый короткий путь до него. Когда очередь доходит до цели, ответ готов. Так ищут дорогу навигаторы, и с таких задач начинают изучать искусственный интеллект.', again: 'Начать заново', skip: 'Другой маршрут', retry: 'Проверить соединение', score: 'Самых коротких путей', map: 'Карта городов' },
+    kz: { title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда бет ашылады. Әзірге есеп: Астанадан басқа қалаға ең қысқа жолмен ұшып жетіңіз.', hint: 'Қазір тұрған қалаңызбен сызық арқылы жалғанған қалаларды басыңыз. Сызықтағы сандар: мың шақырыммен қашықтық.', yours: 'Сіздің жолыңыз', unit: 'мың км', best: 'Бұл ең қысқа жол. Тамаша!', longer: 'Бұдан қысқа жол бар', how: 'Компьютер қалай іздейді', explain: 'Компьютер болжамайды. Ол Астанадан барлық бағытқа тарайды және әрқашан алдымен ең жақын қаланы тексереді. Қала жанындағы сан: оған дейінгі ең қысқа жол. Кезек мақсатқа жеткенде жауап дайын. Навигаторлар жолды осылай іздейді, жасанды интеллектті оқу да осындай есептерден басталады.', again: 'Қайта бастау', skip: 'Басқа бағыт', retry: 'Байланысты тексеру', score: 'Ең қысқа жолдар', map: 'Қалалар картасы' },
+    en: { title: 'No connection', lead: 'The page will open once you are back online. Meanwhile, a puzzle: fly from Astana to another city by the shortest route.', hint: 'Tap a city joined by a line to the one you are in. Numbers on the lines are distances in thousands of kilometres.', yours: 'Your route', unit: 'thousand km', best: 'That is the shortest route. Well done!', longer: 'There is a shorter route', how: 'How a computer searches', explain: 'A computer does not guess. It spreads out from Astana in every direction and always checks the nearest city first. The number by each city is the shortest way to it. Once the goal comes up, the answer is ready. Navigation apps find routes this way, and puzzles like this are where learning artificial intelligence begins.', again: 'Start over', skip: 'Another route', retry: 'Check connection', score: 'Shortest routes found', map: 'Map of cities' },
   }[L]
   document.documentElement.lang = L === 'kz' ? 'kk' : L
   document.querySelectorAll('[data-t]').forEach((n) => (n.textContent = T[n.dataset.t]))
   document.title = T.title + ' · Bolashak'
   const svg = document.getElementById('map'); svg.setAttribute('aria-label', T.map)
-  // a schematic map: each city roughly where it is, spread out so every one is easy to tap (x, y on an 800 × 400 field)
+  // name ru, kz, en; latitude and longitude (for real straight-line distances); x, y on the schematic 920 × 490 map; where its name sits
   const C = [
-    ['Астана', 'Астана', 'Astana', 545, 110], ['Торонто', 'Торонто', 'Toronto', 80, 115], ['Бостон', 'Бостон', 'Boston', 175, 160],
-    ['Нью-Йорк', 'Нью-Йорк', 'New York', 95, 225], ['Эдинбург', 'Эдинбург', 'Edinburgh', 285, 60], ['Лондон', 'Лондон', 'London', 320, 140],
-    ['Париж', 'Париж', 'Paris', 285, 220], ['Цюрих', 'Цюрих', 'Zurich', 385, 235], ['Берлин', 'Берлин', 'Berlin', 420, 125],
-    ['Пекин', 'Бейжің', 'Beijing', 640, 160], ['Сеул', 'Сеул', 'Seoul', 700, 85], ['Токио', 'Токио', 'Tokyo', 735, 185],
-    ['Сингапур', 'Сингапур', 'Singapore', 590, 280], ['Сидней', 'Сидней', 'Sydney', 740, 318], ['Мельбурн', 'Мельбурн', 'Melbourne', 640, 360],
+    ['Астана', 'Астана', 'Astana', 51.17, 71.45, 600, 110, 't'], ['Торонто', 'Торонто', 'Toronto', 43.65, -79.38, 85, 130, 'l'],
+    ['Бостон', 'Бостон', 'Boston', 42.36, -71.06, 190, 205, 'r'], ['Нью-Йорк', 'Нью-Йорк', 'New York', 40.71, -74.01, 85, 295, 'b'],
+    ['Эдинбург', 'Эдинбург', 'Edinburgh', 55.95, -3.19, 300, 60, 'r'], ['Лондон', 'Лондон', 'London', 51.51, -0.13, 315, 170, 'br'],
+    ['Париж', 'Париж', 'Paris', 48.86, 2.35, 290, 305, 'b'], ['Цюрих', 'Цюрих', 'Zurich', 47.37, 8.54, 430, 335, 'b'],
+    ['Берлин', 'Берлин', 'Berlin', 52.52, 13.4, 455, 150, 't'], ['Пекин', 'Бейжің', 'Beijing', 39.9, 116.41, 720, 205, 'l'],
+    ['Сеул', 'Сеул', 'Seoul', 37.57, 126.98, 800, 90, 't'], ['Токио', 'Токио', 'Tokyo', 35.68, 139.69, 840, 235, 'r'],
+    ['Сингапур', 'Сингапур', 'Singapore', 1.35, 103.82, 680, 380, 'l'], ['Сидней', 'Сидней', 'Sydney', -33.87, 151.21, 840, 405, 'r'],
+    ['Мельбурн', 'Мельбурн', 'Melbourne', -37.81, 144.96, 750, 455, 'l'],
   ]
+  const id = Object.fromEntries(C.map((c, i) => [c[2], i]))
+  const E = [['Toronto', 'Boston'], ['Boston', 'New York'], ['Toronto', 'New York'], ['Edinburgh', 'Toronto'], ['London', 'Boston'], ['Paris', 'New York'],
+    ['Edinburgh', 'London'], ['London', 'Paris'], ['London', 'Berlin'], ['Paris', 'Zurich'], ['Zurich', 'Berlin'], ['Berlin', 'Astana'], ['Zurich', 'Astana'],
+    ['Astana', 'Beijing'], ['Astana', 'Seoul'], ['Astana', 'Singapore'], ['Beijing', 'Seoul'], ['Seoul', 'Tokyo'], ['Beijing', 'Tokyo'], ['Beijing', 'Singapore'],
+    ['Singapore', 'Sydney'], ['Singapore', 'Melbourne'], ['Tokyo', 'Sydney'], ['Sydney', 'Melbourne']]
+    .map(([a, b]) => [id[a], id[b]])
   const ix = { ru: 0, kz: 1, en: 2 }[L]
-  const X = (v) => v, Y = (v) => v
-  const ns = 'http://www.w3.org/2000/svg', el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); return e }
-  const grid = el('g', { class: 'grid' }); for (let x = 0; x <= 800; x += 80) grid.append(el('line', { x1: x, y1: 0, x2: x, y2: 400 })); for (let y = 0; y <= 400; y += 80) grid.append(el('line', { x1: 0, y1: y, x2: 800, y2: y })); svg.append(grid)
-  const routes = el('g', {}); svg.append(routes)
-  const nodes = C.map((c, i) => { const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }); const x = X(c[3]), y = Y(c[4]); g.append(el('circle', { cx: x, cy: y, r: 9 })); const t = el('text', { x: x + (x > 700 ? -14 : 14), y: y + 4, 'text-anchor': x > 700 ? 'end' : 'start' }); t.textContent = c[ix]; g.append(t); g.dataset.i = i; svg.append(g); return { g, x, y } })
-  let route = [], step = 0, done = +(sessionStorage.getItem('bw-routes') || 0), len = 2
-  const task = document.getElementById('task'), score = document.getElementById('score')
-  const draw = () => {
+  const rad = (d) => (d * Math.PI) / 180
+  const km = (a, b) => { const [p, q] = [C[a], C[b]]; const h = Math.sin(rad(q[3] - p[3]) / 2) ** 2 + Math.cos(rad(p[3])) * Math.cos(rad(q[3])) * Math.sin(rad(q[4] - p[4]) / 2) ** 2; return Math.round((2 * 6371 * Math.asin(Math.sqrt(h))) / 100) / 10 }
+  const W = E.map(([a, b]) => km(a, b))
+  const nb = C.map(() => []); E.forEach(([a, b], k) => { nb[a].push([b, W[k], k]); nb[b].push([a, W[k], k]) })
+  const fmt = (v) => (L === 'en' ? v.toFixed(1) : v.toFixed(1).replace('.', ','))
+  const ns = 'http://www.w3.org/2000/svg', el = (n, a, p) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); if (p) p.append(e); return e }
+  const xy = (i) => [C[i][5], C[i][6]]
+  const roads = el('g', {}, svg), trails = el('g', {}, svg), labels = el('g', {}, svg), cities = el('g', {}, svg), tags = el('g', {}, svg)
+  const roadEls = E.map(([a, b], k) => {
+    const [x1, y1] = xy(a), [x2, y2] = xy(b)
+    const r = el('line', { class: 'road', x1, y1, x2, y2 }, roads)
+    const g = el('g', { class: 'km' }, labels), t = el('text', { x: (x1 + x2) / 2, y: (y1 + y2) / 2 + 4 }, g); t.textContent = fmt(W[k])
+    el('rect', { x: (x1 + x2) / 2 - 17, y: (y1 + y2) / 2 - 10, width: 34, height: 19, rx: 9 }, g).after(t)
+    return r
+  })
+  const nodes = C.map((c, i) => {
+    const [x, y] = xy(i), side = c[7]
+    const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }, cities)
+    el('rect', { class: 'ring', x: x - 12, y: y - 12, width: 24, height: 24, rx: 5 }, g)
+    el('rect', { x: x - 7, y: y - 7, width: 14, height: 14, rx: 2 }, g)
+    const [dx, dy, an] = { t: [0, -16, 'middle'], b: [0, 26, 'middle'], l: [-15, 5, 'end'], r: [15, 5, 'start'], br: [12, 22, 'start'] }[side]
+    const t = el('text', { x: x + dx, y: y + dy, 'text-anchor': an }, g); t.textContent = c[ix]
+    g.addEventListener('click', () => pick(i)); g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i) } })
+    return g
+  })
+  const line = (a, b, cls, p) => { const [x1, y1] = xy(a), [x2, y2] = xy(b); return el('path', { class: cls, d: `M${x1} ${y1}L${x2} ${y2}`, pathLength: 1 }, p) }
+  // shortest routes from the start, in the order a uniform-cost search settles the cities
+  const search = (s, goal) => {
+    const d = C.map(() => Infinity), prev = C.map(() => -1), done = C.map(() => false), order = []
+    d[s] = 0
+    for (;;) {
+      let u = -1; d.forEach((v, i) => { if (!done[i] && v < Infinity && (u < 0 || v < d[u])) u = i })
+      if (u < 0) break
+      done[u] = true; order.push(u); if (u === goal) break
+      for (const [v, w] of nb[u]) if (d[u] + w < d[v] - 1e-9) { d[v] = Math.round((d[u] + w) * 10) / 10; prev[v] = u }
+    }
+    const path = []; for (let v = goal; v >= 0; v = prev[v]) path.unshift(v)
+    return { d, prev, order, path }
+  }
+  const START = id.Astana, GOALS = ['Toronto', 'Boston', 'New York', 'Edinburgh', 'London', 'Paris', 'Zurich', 'Tokyo', 'Sydney', 'Melbourne'].map((n) => id[n])
+  const task = document.getElementById('task'), score = document.getElementById('score'), result = document.getElementById('result'), verdict = document.getElementById('verdict'), how = document.getElementById('how'), explain = document.getElementById('explain')
+  let goal = -1, path = [], dist = 0, finished = false, timer = 0, wins = +(sessionStorage.getItem('bw-short') || 0)
+  const here = () => path[path.length - 1]
+  const paint = () => {
+    const can = finished ? [] : nb[here()].map(([v]) => v)
+    nodes.forEach((g, i) => { g.classList.toggle('on', path.includes(i)); g.classList.toggle('goal', i === goal && !path.includes(i)); g.classList.toggle('can', can.includes(i)) })
+    roadEls.forEach((r, k) => r.classList.toggle('can', !finished && E[k].includes(here())))
     task.textContent = ''
-    route.forEach((c, k) => { if (k) { const i = document.createElement('i'); i.textContent = '→'; task.append(i) } const s = document.createElement('span'); s.textContent = C[c][ix]; if (k < step) s.className = 'done'; task.append(s) })
-    nodes.forEach((n, i) => { n.g.classList.toggle('is-start', i === route[0]); n.g.classList.toggle('is-hit', route.slice(0, step).includes(i)); n.g.classList.toggle('is-next', i === route[step]) })
-    score.textContent = `${T.score}: ${done}`
+    const a = document.createElement('b'); a.textContent = C[START][ix]; const i = document.createElement('i'); i.textContent = '→'; const b = document.createElement('b'); b.className = 'goal'; b.textContent = C[goal][ix]
+    const s = document.createElement('span'); s.className = 'sum'; s.textContent = `${T.yours}: ${fmt(dist)} ${T.unit}`
+    task.append(a, i, b, s)
+    score.textContent = `${T.score}: ${wins}`
   }
-  const fresh = () => { routes.textContent = ''; const pool = [...C.keys()].slice(1).sort(() => Math.random() - 0.5); route = [0, ...pool.slice(0, len)]; step = 1; draw() }
-  const arc = (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - Math.min(90, Math.hypot(b.x - a.x, b.y - a.y) / 4); routes.append(el('path', { class: 'fly', d: `M${a.x} ${a.y} Q${mx} ${my} ${b.x} ${b.y}`, pathLength: 1 })) }
+  const restart = () => { clearTimeout(timer); trails.textContent = ''; tags.textContent = ''; path = [START]; dist = 0; finished = false; result.classList.remove('show'); explain.hidden = true; how.hidden = false; paint() }
+  const fresh = () => { const pool = GOALS.filter((g) => g !== goal); goal = pool[Math.floor(Math.random() * pool.length)]; restart() }
+  const finish = () => {
+    finished = true
+    const best = search(START, goal)
+    const ok = Math.abs(dist - best.d[goal]) < 0.05
+    if (ok) { wins++; sessionStorage.setItem('bw-short', wins) }
+    verdict.innerHTML = ''
+    const st = document.createElement('strong'); st.textContent = ok ? T.best : `${T.longer}: ${fmt(best.d[goal])} ${T.unit}`
+    verdict.append(st)
+    result.classList.add('show'); paint()
+  }
   const pick = (i) => {
-    if (i === route[step]) { arc(nodes[route[step - 1]], nodes[i]); step++; if (step === route.length) { done++; sessionStorage.setItem('bw-routes', done); len = Math.min(6, len + 1); draw(); setTimeout(fresh, 900); return } draw() }
-    else if (!route.slice(0, step).includes(i)) { const g = nodes[i].g; g.classList.remove('is-miss'); void g.getBBox(); g.classList.add('is-miss') }
+    if (finished) return
+    const at = path.indexOf(i)
+    if (at >= 0) { // a city already on your route: go back to it
+      if (at === path.length - 1) return
+      path = path.slice(0, at + 1); trails.textContent = ''; dist = 0
+      for (let k = 1; k < path.length; k++) { dist += nb[path[k - 1]].find(([v]) => v === path[k])[1]; line(path[k - 1], path[k], 'mine', trails).style.animation = 'none' }
+      dist = Math.round(dist * 10) / 10; paint(); return
+    }
+    const hop = nb[here()].find(([v]) => v === i)
+    if (!hop) { const g = nodes[i]; g.classList.remove('miss'); void g.getBBox(); g.classList.add('miss'); return }
+    line(here(), i, 'mine', trails); path.push(i); dist = Math.round((dist + hop[1]) * 10) / 10
+    if (i === goal) finish(); else paint()
   }
-  nodes.forEach((n, i) => { n.g.addEventListener('click', () => pick(i)); n.g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i) } }) })
+  how.onclick = () => {
+    how.hidden = true; explain.hidden = false
+    trails.querySelectorAll('.mine').forEach((p) => (p.style.opacity = '.35'))
+    const { d, prev, order, path: best } = search(START, goal)
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches
+    const tag = (u) => {
+      if (prev[u] >= 0) line(prev[u], u, 'seen', trails)
+      // the tag goes on the side opposite the city's name
+      const [x0, y0] = xy(u), [ox, oy] = { t: [0, 20], b: [0, -20], l: [32, 0], r: [-32, 0], br: [-32, 0] }[C[u][7]], x = x0 + ox, y = y0 + oy
+      const g = el('g', { class: 'tag' }, tags)
+      el('rect', { x: x - 19, y: y - 10, width: 38, height: 19, rx: 9 }, g)
+      const t = el('text', { x, y: y + 5 }, g); t.textContent = fmt(d[u])
+    }
+    const end = () => best.slice(1).forEach((v, k) => line(best[k], v, 'best', trails))
+    if (still) { order.forEach(tag); end(); return }
+    let k = 0
+    const step = () => { if (k < order.length) { tag(order[k++]); timer = setTimeout(step, 550) } else end() }
+    step()
+  }
+  document.getElementById('again').onclick = restart
   document.getElementById('skip').onclick = fresh
   document.getElementById('retry').onclick = () => location.reload()
   addEventListener('online', () => location.reload())
   fresh()
+  // on a phone the map scrolls sideways: start with Astana in view
+  const sc = document.getElementById('scroll'); if (sc.scrollWidth > sc.clientWidth) sc.scrollLeft = (C[START][5] / 920) * sc.scrollWidth - sc.clientWidth / 2
 })()
 </script>
 </body>
