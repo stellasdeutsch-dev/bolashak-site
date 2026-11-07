@@ -1,49 +1,66 @@
 <!doctype html>
 <html data-base="/bolashak-site" lang="ru">
 <head><meta name="robots" content="noindex">
-<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-fd3g12ssML+Ttnaw6Mi7IuWpkaZ4pKwMKakcnFZ6Ubw=' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu; font-src 'self'; connect-src 'self'; media-src 'self' https://bolashak.gov.kz; frame-src 'self' http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu https://view.officeapps.live.com https://www.facebook.com https://www.youtube-nocookie.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-JedaRwOB6r7gS4rM0KwBaPvM/zo589dc1LGXwpl6eMs=' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu; font-src 'self'; connect-src 'self'; media-src 'self' https://bolashak.gov.kz; frame-src 'self' http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu https://view.officeapps.live.com https://www.facebook.com https://www.youtube-nocookie.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Нет соединения · Bolashak · тестовая версия</title>
 <style>
-:root{--ind:#384899;--deep:#27346F;--sun:#FFC629;--ink:#0F1535;--mute:#565D75;--line:#DDE0EC;--paper:#F4F5FB;--soft:#C9CFEA}
+:root{--ind:#384899;--deep:#27346F;--sun:#FFC629;--ink:#0F1535;--mute:#565D75;--line:#DDE0EC;--paper:#F4F5FB;--soft:#C9CFEA;--route:#B8BFDA}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:#fff;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column}
 .head{background:var(--ind);color:#fff;padding:28px 20px 32px}
-.wrap{max-width:960px;margin:0 auto;width:100%}
+.wrap{max-width:980px;margin:0 auto;width:100%}
 h1{margin:0 0 8px;font-size:clamp(26px,5vw,40px);line-height:1.15}
 .head p{margin:0;color:#dfe4ff;max-width:62ch}
+.call{margin:12px 0 0;color:#dfe4ff}.call a{color:#fff;font-weight:700}
 main{flex:1;padding:24px 20px 40px}
-.card{border:1px solid var(--line);border-radius:12px;padding:clamp(16px,3vw,28px);display:grid;gap:14px;min-width:0}
-.task{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:600}
-.task b{padding:6px 12px;border-radius:12px;background:var(--ind);color:#fff}
+.card{border:1px solid var(--line);border-radius:16px;padding:clamp(16px,3vw,28px);display:grid;gap:16px;min-width:0}
+.task{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:700}
+.task b{padding:6px 12px;border-radius:999px;background:var(--ind);color:#fff;font-weight:700}
 .task b.goal{background:var(--sun);color:var(--ink)}
 .task i{font-style:normal;color:var(--mute)}
-.task .sum{margin-left:auto;color:var(--mute)}
-.hint{margin:0;color:var(--mute);font-size:15px;max-width:36em}
-svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:12px;touch-action:manipulation}
-.road{stroke:#b9c0da;stroke-width:2}
-.road.can{stroke:var(--ind);stroke-width:2.5}
-.km rect{fill:#fff}.km text{font:600 14px system-ui,sans-serif;fill:var(--mute);text-anchor:middle}
+.hint{margin:0;color:var(--mute);font-size:15px;max-width:40em}
+/* the map: a quiet dotted ground, routes as arcs like an airline route map */
+.map{position:relative;border-radius:14px;background:var(--paper) radial-gradient(circle,#dfe3f1 1px,transparent 1.3px) 0 0/18px 18px;overflow:hidden}
+svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.road{fill:none;stroke:var(--route);stroke-width:1.5;stroke-linecap:round}
+.road.can{stroke:var(--ind);stroke-width:2.2}
+.km{font:600 12px system-ui,sans-serif;fill:#7d84a0;text-anchor:middle;paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+.km.can{fill:var(--ind);font-weight:800;font-size:13px}
 .city{cursor:pointer;outline:none}
-.city rect{fill:#fff;stroke:var(--ink);stroke-width:2.5}
-.city .ring{fill:none;stroke:transparent;stroke-width:3}
-.city text{font:600 15px system-ui,sans-serif;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
-.city.on rect{fill:var(--ind);stroke:var(--ind)}
-.city.goal rect{fill:var(--sun);stroke:var(--ink)}
-.city.can .ring{stroke:var(--ind)}
-.city .hit{fill:transparent;stroke:none}
-.call{margin:12px 0 0;color:#dfe4ff}.call a{color:#fff;font-weight:700}
-.head .go{margin-top:16px;background:var(--sun);color:var(--ink)}.head .go:hover{background:#FFD65C}
-.city:focus-visible .ring{stroke:var(--ink)}
+.city .hit{fill:transparent}
+.city .dot{fill:#fff;stroke:var(--ink);stroke-width:2}
+.city .halo{fill:var(--ind);opacity:0}
+.city .ring{fill:none;stroke:transparent;stroke-width:2}
+.city text{font:600 14px system-ui,sans-serif;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}
+.city.can .dot{stroke:var(--ind);stroke-width:2.5}
+.city.can .ring{stroke:var(--ind);opacity:.35}
+.city.on .dot{fill:var(--ind);stroke:var(--ind)}
+.city.here .halo{opacity:.16}
+.city.here .dot{fill:var(--ind);stroke:#fff;stroke-width:2.5}
+.city.goal text,.city.here text{font-weight:800}
+.city:focus-visible .ring{stroke:var(--ink);opacity:1;stroke-width:2.5}
+.city:hover .ring{stroke:var(--ind);opacity:.6}
 .city.miss{animation:miss .3s}
-@keyframes miss{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-.mine{stroke:var(--ind);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .45s ease-out forwards}
-.best{stroke:var(--sun);stroke-width:6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .6s ease-out forwards}
-.seen{stroke:var(--soft);stroke-width:5;stroke-linecap:round}
+@keyframes miss{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.can .ring{animation:breathe 1.8s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.08}}
+.pin path{fill:var(--sun);stroke:var(--ink);stroke-width:1.5}.pin circle{fill:var(--ink)}
+.mine{fill:none;stroke:var(--ind);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .6s ease-in-out forwards}
+.best{fill:none;stroke:var(--sun);stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .7s ease-in-out forwards}
+.seen{fill:none;stroke:var(--soft);stroke-width:4;stroke-linecap:round}
 @keyframes fly{to{stroke-dashoffset:0}}
-.tag rect{fill:var(--ink)}.tag text{font:700 13px system-ui,sans-serif;fill:#fff;text-anchor:middle}
+.plane path{fill:var(--ind);stroke:#fff;stroke-width:1.2;stroke-linejoin:round}
+.tag rect{fill:var(--ink)}.tag text{font:700 11px system-ui,sans-serif;fill:#fff;text-anchor:middle}
 .tag{animation:pop .25s ease-out}
-@keyframes pop{from{opacity:0;transform:translateY(4px)}}
+@keyframes pop{from{opacity:0}}
+/* your route as a chain under the map */
+.trip{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;font-weight:600;min-height:28px}
+.trip .c{padding:2px 10px;border-radius:999px;background:var(--paper)}
+.trip .c.goal{background:var(--sun)}
+.trip .leg{color:var(--mute);font-size:13px;font-weight:600;padding:0 2px;white-space:nowrap}
+.trip .leg::before{content:"";display:inline-block;width:14px;height:2px;background:var(--route);vertical-align:middle;margin-right:4px}
+.trip .sum{margin-left:auto;font-weight:800}
 .result{display:none;gap:10px;background:var(--paper);border-radius:12px;padding:14px 16px}
 .result.show{display:grid}
 .result p{margin:0}.result strong{font-size:18px}
@@ -51,13 +68,16 @@ svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:1
 .score{color:var(--mute);font-weight:600}
 .btns{display:flex;flex-wrap:wrap;gap:10px}
 button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:12px;border:1px solid transparent;cursor:pointer}
+button:focus-visible{outline:3px solid var(--ind);outline-offset:2px}
 .go{background:var(--ink);color:#fff}.go:hover{background:var(--ind)}
+.head .go{margin-top:16px;background:var(--sun);color:var(--ink)}.head .go:hover{background:#FFD65C}.head .go:focus-visible{outline-color:#fff}
 .ghost{background:#fff;border-color:var(--line);color:var(--ink)}.ghost:hover{border-color:var(--ind);color:var(--ind)}
 .result .ghost{justify-self:start}
 @media(max-width:600px){
   .head{padding:16px 16px 18px}h1{font-size:24px;margin-bottom:4px}.head p{font-size:15px}main{padding:14px 12px 24px}.card{padding:12px;gap:10px}
-  .task{font-size:14px;gap:6px}.yl{display:none}.card{gap:8px}.hint{line-height:1.4}.task b{padding:3px 9px}.hint{font-size:14px}
-  .btns{display:grid;grid-template-columns:1fr 1fr}.btns .go{grid-column:1/-1}.btns button{width:100%;padding:10px 12px;font-size:15px}
+  .task{font-size:14px;gap:6px}.task b{padding:3px 10px}.hint{font-size:14px;line-height:1.4}
+  .trip{font-size:14px}.trip .sum{margin-left:0;width:100%}
+  .btns{display:grid;grid-template-columns:1fr 1fr;width:100%}.btns button{width:100%;padding:10px 12px;font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mine,.best{stroke-dashoffset:0}}
 </style>
@@ -65,9 +85,10 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
 <body><div role="note" style="background:#1B2350;color:#C9CFEA;font:400 12px/16px system-ui,sans-serif;padding:4px 16px;text-align:center"><style>.tn{display:none}:root[lang=ru] .tn-ru,:root[lang=kk] .tn-kz,:root[lang=en] .tn-en{display:inline}</style><span class="tn tn-ru">Тестовая версия редизайна. Это не официальный сайт. Официальный сайт: </span><span class="tn tn-kz">Қайта безендірудің сынақ нұсқасы. Бұл ресми сайт емес. Ресми сайт: </span><span class="tn tn-en">Test version of a redesign. This is not the official site. Official site: </span>bolashak.gov.kz</div>
 <header class="head"><div class="wrap"><h1 data-t="title">Нет соединения</h1><p data-t="lead"></p><p class="call"><a href="tel:+77172769076">+7 (717) 276-90-76</a> · <span data-t="hours"></span></p><button class="go" id="retry" type="button" data-t="retry"></button></div></header>
 <main><div class="wrap card">
-  <div class="task" id="task" aria-live="polite"></div>
+  <div class="task" id="task"></div>
   <p class="hint" data-t="hint"></p>
-  <svg id="map" viewBox="0 0 920 490" role="group"></svg>
+  <div class="map"><svg id="map" viewBox="0 0 920 490" role="group"></svg></div>
+  <div class="trip" id="trip" aria-live="polite"></div>
   <div class="result" id="result" aria-live="polite"><p id="verdict"></p><button class="ghost" id="how" type="button" data-t="how"></button><p id="explain" hidden data-t="explain"></p></div>
   <div class="row"><span class="score" id="score"></span><span class="btns"><button class="ghost" id="again" type="button" data-t="again"></button><button class="ghost" id="skip" type="button" data-t="skip"></button></span></div>
 </div></main>
@@ -114,32 +135,70 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
   const phone = matchMedia('(max-width: 600px)')
   const at = (i) => (phone.matches ? M[C[i][2]] : [C[i][5], C[i][6], C[i][7]])
   const xy = (i) => at(i).slice(0, 2)
-  const roads = el('g', {}, svg), trails = el('g', {}, svg), labels = el('g', {}, svg), cities = el('g', {}, svg), tags = el('g', {}, svg)
-  let roadEls = [], nodes = []
+  const roads = el('g', {}, svg), trails = el('g', {}, svg), labels = el('g', {}, svg), cities = el('g', {}, svg), tags = el('g', {}, svg), sky = el('g', {}, svg)
+  let roadEls = [], kmEls = [], nodes = []
+  // a flight between two cities drawn as a gentle arc, bowing upward like a route on an airline map
+  const arc = (a, b) => {
+    const [x1, y1] = xy(a), [x2, y2] = xy(b), dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1
+    let nx = -dy / len, ny = dx / len
+    if (ny > 0) { nx = -nx; ny = -ny }
+    const bow = Math.min(46, len * 0.16), cx = (x1 + x2) / 2 + nx * bow, cy = (y1 + y2) / 2 + ny * bow
+    return { d: `M${x1} ${y1}Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2} ${y2}`, mx: (x1 + 2 * cx + x2) / 4, my: (y1 + 2 * cy + y2) / 4 }
+  }
+  const pinPath = 'M0 0C-6 -8 -9 -13 -9 -18A9 9 0 1 1 9 -18C9 -13 6 -8 0 0Z'
   const build = () => {
     svg.setAttribute('viewBox', phone.matches ? '0 0 410 550' : '0 0 920 490')
-    ;[roads, trails, labels, cities, tags].forEach((g) => (g.textContent = ''))
-    roadEls = E.map(([a, b], k) => {
-      const [x1, y1] = xy(a), [x2, y2] = xy(b)
-      const r = el('line', { class: 'road', x1, y1, x2, y2 }, roads)
-      const g = el('g', { class: 'km' }, labels)
-      el('rect', { x: (x1 + x2) / 2 - 17, y: (y1 + y2) / 2 - 10, width: 34, height: 19, rx: 9 }, g)
-      el('text', { x: (x1 + x2) / 2, y: (y1 + y2) / 2 + 4 }, g).textContent = fmt(W[k])
-      return r
+    ;[roads, trails, labels, cities, tags, sky].forEach((g) => (g.textContent = ''))
+    roadEls = []; kmEls = []
+    E.forEach(([a, b], k) => {
+      const r = arc(a, b)
+      roadEls.push(el('path', { class: 'road', d: r.d }, roads))
+      const t = el('text', { class: 'km', x: r.mx.toFixed(1), y: (r.my + 4).toFixed(1) }, labels)
+      t.textContent = fmt(W[k]); kmEls.push(t)
     })
     nodes = C.map((c, i) => {
-      const [x, y, side] = at(i)
+      let [x, y, side] = at(i)
       const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }, cities)
-      el('rect', { class: 'hit', x: x - 22, y: y - 22, width: 44, height: 44 }, g)
-      el('rect', { class: 'ring', x: x - 12, y: y - 12, width: 24, height: 24, rx: 5 }, g)
-      el('rect', { x: x - 7, y: y - 7, width: 14, height: 14, rx: 2 }, g)
-      const [dx, dy, an] = { t: [0, -16, 'middle'], b: [0, 26, 'middle'], l: [-15, 5, 'end'], r: [15, 5, 'start'], br: [12, 22, 'start'] }[side]
-      el('text', { x: x + dx, y: y + dy, 'text-anchor': an }, g).textContent = c[ix]
+      el('circle', { class: 'hit', cx: x, cy: y, r: 22 }, g)
+      el('circle', { class: 'halo', cx: x, cy: y, r: 15 }, g)
+      el('circle', { class: 'ring', cx: x, cy: y, r: 11 }, g)
+      el('circle', { class: 'dot', cx: x, cy: y, r: 6 }, g)
+      const [dx, dy, an] = { t: [0, -15, 'middle'], b: [0, 24, 'middle'], l: [-14, 5, 'end'], r: [14, 5, 'start'], br: [11, 21, 'start'] }[side]
+      const label = el('text', { x: x + dx, y: y + dy, 'text-anchor': an }, g); label.textContent = c[ix]
+      g.dataset.side = side
       g.addEventListener('click', () => pick(i)); g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i) } })
       return g
     })
   }
-  const line = (a, b, cls, p) => { const [x1, y1] = xy(a), [x2, y2] = xy(b); return el('path', { class: cls, d: `M${x1} ${y1}L${x2} ${y2}`, pathLength: 1 }, p) }
+  // the goal gets a yellow pin; a name that sat above the city moves aside so the pin never covers it
+  let pinEl = null
+  const placePin = () => {
+    pinEl?.remove()
+    nodes.forEach((g) => { const t = g.querySelector('text'); const [x, y] = xy(+nodes.indexOf(g)); if (g.dataset.side === 't') { t.setAttribute('x', x); t.setAttribute('y', y - 15); t.setAttribute('text-anchor', 'middle') } })
+    if (goal < 0) return
+    const [x, y] = xy(goal)
+    pinEl = el('g', { class: 'pin', transform: `translate(${x} ${y - 5})`, 'aria-hidden': 'true' }, cities)
+    el('path', { d: pinPath }, pinEl); el('circle', { cy: -18, r: 3.2 }, pinEl)
+    const g = nodes[goal], t = g.querySelector('text')
+    if (g.dataset.side === 't') { const left = x > (phone.matches ? 300 : 700); t.setAttribute('x', x + (left ? -16 : 16)); t.setAttribute('y', y + 5); t.setAttribute('text-anchor', left ? 'end' : 'start') }
+  }
+  // a small plane flies along a new leg of the route
+  const planeShape = 'M0 -9L2 -2L9 2V4L2 2.5L1.5 7L3.5 8.6V9.8L0 8.8L-3.5 9.8V8.6L-1.5 7L-2 2.5L-9 4V2L-2 -2Z'
+  const fly = (pathEl) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const total = pathEl.getTotalLength(), plane = el('g', { class: 'plane', 'aria-hidden': 'true' }, sky)
+    el('path', { d: planeShape }, plane)
+    const t0 = performance.now(), D = 600
+    const step = (now) => {
+      const k = Math.min(1, (now - t0) / D), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2
+      const p = pathEl.getPointAtLength(e * total), q = pathEl.getPointAtLength(Math.min(total, e * total + 1))
+      const ang = (Math.atan2(q.y - p.y, q.x - p.x) * 180) / Math.PI + 90
+      plane.setAttribute('transform', `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${ang.toFixed(1)})`)
+      if (k < 1) requestAnimationFrame(step); else plane.remove()
+    }
+    requestAnimationFrame(step)
+  }
+  const line = (a, b, cls, p) => el('path', { class: cls, d: arc(a, b).d, pathLength: 1 }, p)
   // shortest routes from the start, in the order a uniform-cost search settles the cities
   const search = (s, goal) => {
     const d = C.map(() => Infinity), prev = C.map(() => -1), done = C.map(() => false), order = []
@@ -157,23 +216,31 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
   const task = document.getElementById('task'), score = document.getElementById('score'), result = document.getElementById('result'), verdict = document.getElementById('verdict'), how = document.getElementById('how'), explain = document.getElementById('explain')
   let goal = -1, path = [], dist = 0, finished = false, timer = 0, wins = +(sessionStorage.getItem('bw-short') || 0)
   const here = () => path[path.length - 1]
+  const trip = document.getElementById('trip')
   const paint = () => {
     const can = finished ? [] : nb[here()].map(([v]) => v)
     nodes.forEach((g, i) => {
-      g.classList.toggle('on', path.includes(i)); g.classList.toggle('goal', i === goal && !path.includes(i)); g.classList.toggle('can', can.includes(i))
+      g.classList.toggle('on', path.includes(i)); g.classList.toggle('here', i === here()); g.classList.toggle('goal', i === goal); g.classList.toggle('can', can.includes(i))
       const st = [i === here() ? T.stHere : path.includes(i) ? T.stOn : '', i === goal ? T.stGoal : '', can.includes(i) ? T.stCan : i !== here() && !finished ? T.stNo : ''].filter(Boolean)
       g.setAttribute('aria-label', [C[i][ix], ...st].join(', '))
       if (i === here()) g.setAttribute('aria-current', 'location'); else g.removeAttribute('aria-current')
       g.setAttribute('aria-disabled', String(!can.includes(i)))
     })
     roadEls.forEach((r, k) => r.classList.toggle('can', !finished && E[k].includes(here())))
+    kmEls.forEach((t, k) => t.classList.toggle('can', !finished && E[k].includes(here())))
     task.textContent = ''
     const a = document.createElement('b'); a.textContent = C[START][ix]; const i = document.createElement('i'); i.textContent = '→'; const b = document.createElement('b'); b.className = 'goal'; b.textContent = C[goal][ix]
-    const s = document.createElement('span'); s.className = 'sum'; const y = document.createElement('span'); y.className = 'yl'; y.textContent = `${T.yours}: `; s.append(y, `${fmt(dist)} ${T.unit}`)
-    task.append(a, i, b, s)
+    task.append(a, i, b)
+    // the route so far as a chain: city, distance, city…
+    trip.textContent = ''
+    path.forEach((c, k) => {
+      if (k) { const leg = document.createElement('span'); leg.className = 'leg'; leg.textContent = fmt(nb[path[k - 1]].find(([v]) => v === c)[1]); trip.append(leg) }
+      const n = document.createElement('span'); n.className = 'c' + (c === goal ? ' goal' : ''); n.textContent = C[c][ix]; trip.append(n)
+    })
+    const sum = document.createElement('span'); sum.className = 'sum'; sum.textContent = `${T.yours}: ${fmt(dist)} ${T.unit}`; trip.append(sum)
     score.textContent = `${T.score}: ${wins}`
   }
-  const restart = () => { clearTimeout(timer); trails.textContent = ''; tags.textContent = ''; path = [START]; dist = 0; finished = false; result.classList.remove('show'); explain.hidden = true; how.hidden = false; paint() }
+  const restart = () => { clearTimeout(timer); trails.textContent = ''; tags.textContent = ''; sky.textContent = ''; placePin(); path = [START]; dist = 0; finished = false; result.classList.remove('show'); explain.hidden = true; how.hidden = false; paint() }
   const fresh = () => { const pool = GOALS.filter((g) => g !== goal); goal = pool[Math.floor(Math.random() * pool.length)]; restart() }
   const finish = () => {
     finished = true
@@ -196,7 +263,7 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
     }
     const hop = nb[here()].find(([v]) => v === i)
     if (!hop) { const g = nodes[i]; g.classList.remove('miss'); void g.getBBox(); g.classList.add('miss'); return }
-    line(here(), i, 'mine', trails); path.push(i); dist = Math.round((dist + hop[1]) * 10) / 10
+    fly(line(here(), i, 'mine', trails)); path.push(i); dist = Math.round((dist + hop[1]) * 10) / 10
     if (i === goal) finish(); else paint()
   }
   how.onclick = () => {
@@ -207,10 +274,10 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
     const tag = (u) => {
       if (prev[u] >= 0) line(prev[u], u, 'seen', trails)
       // the tag goes on the side opposite the city's name
-      const [x0, y0] = xy(u), [ox, oy] = { t: [0, 20], b: [0, -20], l: [32, 0], r: [-32, 0], br: [-32, 0] }[at(u)[2]], x = x0 + ox, y = y0 + oy
+      const [x0, y0] = xy(u), [ox, oy] = { t: [0, 22], b: [0, -22], l: [30, 0], r: [-30, 0], br: [-30, 0] }[at(u)[2]], x = x0 + ox, y = y0 + oy
       const g = el('g', { class: 'tag' }, tags)
-      el('rect', { x: x - 19, y: y - 10, width: 38, height: 19, rx: 9 }, g)
-      const t = el('text', { x, y: y + 5 }, g); t.textContent = fmt(d[u])
+      el('rect', { x: x - 17, y: y - 9, width: 34, height: 18, rx: 9 }, g)
+      const t = el('text', { x, y: y + 4 }, g); t.textContent = fmt(d[u])
     }
     const end = () => best.slice(1).forEach((v, k) => line(best[k], v, 'best', trails))
     if (still) { order.forEach(tag); end(); return }
