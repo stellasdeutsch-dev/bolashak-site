@@ -1,0 +1,94 @@
+<!doctype html>
+<html data-base="/bolashak-site" lang="ru">
+<head><meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Нет соединения · Bolashak</title>
+<style>
+:root{--ind:#384899;--deep:#27346f;--sun:#FFC629;--ink:#0e1230;--mute:#5b6178;--line:#dfe3ef;--paper:#f3f5fb}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:#fff;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+.head{background:var(--ind);color:#fff;padding:28px 20px 32px}
+.wrap{max-width:960px;margin:0 auto;width:100%}
+h1{margin:0 0 8px;font-size:clamp(26px,5vw,40px);line-height:1.15}
+.head p{margin:0;color:#dfe4ff;max-width:60ch}
+main{flex:1;padding:24px 20px 40px}
+.card{border:1px solid var(--line);border-radius:12px;padding:clamp(16px,3vw,28px);display:grid;gap:16px}
+.task{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:600}
+.task span{padding:6px 12px;border-radius:12px;background:var(--paper)}
+.task span.done{background:var(--ind);color:#fff}
+.task i{font-style:normal;color:var(--mute)}
+svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:12px;touch-action:manipulation}
+.grid line{stroke:#e7eaf5;stroke-width:1}
+.city{cursor:pointer}.city circle{fill:#fff;stroke:var(--ind);stroke-width:3;transition:r .15s}
+.city text{font:600 13px system-ui,sans-serif;fill:var(--ink);pointer-events:none}
+.city.is-start circle,.city.is-hit circle{fill:var(--ind)}
+.city.is-next circle{stroke:var(--sun);stroke-width:4}
+.city.is-miss{animation:miss .3s}
+@keyframes miss{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.fly{fill:none;stroke:var(--ind);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:fly .6s ease-out forwards}
+@keyframes fly{to{stroke-dashoffset:0}}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.score{color:var(--mute);font-weight:600}
+button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:12px;border:1px solid transparent;cursor:pointer}
+.go{background:var(--ink);color:#fff}.go:hover{background:var(--ind)}
+.ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fly{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<header class="head"><div class="wrap"><h1 data-t="title">Нет соединения</h1><p data-t="lead">Страница откроется, когда интернет вернётся. Пока можно проложить маршрут: нажимайте города по порядку.</p></div></header>
+<main><div class="wrap card">
+  <div class="task" id="task" aria-live="polite"></div>
+  <svg id="map" viewBox="0 0 800 400" role="img" aria-label="Карта городов"></svg>
+  <div class="row"><span class="score" id="score"></span><span><button class="ghost" id="skip" type="button" data-t="skip">Другой маршрут</button> <button class="go" id="retry" type="button" data-t="retry">Проверить соединение</button></span></div>
+</div></main>
+<script>
+(() => {
+  const L = (location.pathname.match(/\/(ru|kz|en)(\/|$)/) || [, 'ru'])[1]
+  const T = {
+    ru: { title: 'Нет соединения', lead: 'Страница откроется, когда интернет вернётся. Пока можно проложить маршрут: нажимайте города по порядку.', skip: 'Другой маршрут', retry: 'Проверить соединение', score: 'Маршрутов проложено', map: 'Карта городов' },
+    kz: { title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда бет ашылады. Әзірге бағыт салып көріңіз: қалаларды ретімен басыңыз.', skip: 'Басқа бағыт', retry: 'Байланысты тексеру', score: 'Салынған бағыттар', map: 'Қалалар картасы' },
+    en: { title: 'No connection', lead: 'The page will open once you are back online. Meanwhile, plot a route: tap the cities in order.', skip: 'Another route', retry: 'Check connection', score: 'Routes completed', map: 'Map of cities' },
+  }[L]
+  document.documentElement.lang = L === 'kz' ? 'kk' : L
+  document.querySelectorAll('[data-t]').forEach((n) => (n.textContent = T[n.dataset.t]))
+  document.title = T.title + ' · Bolashak'
+  const svg = document.getElementById('map'); svg.setAttribute('aria-label', T.map)
+  // a schematic map: each city roughly where it is, spread out so every one is easy to tap (x, y on an 800 × 400 field)
+  const C = [
+    ['Астана', 'Астана', 'Astana', 545, 110], ['Торонто', 'Торонто', 'Toronto', 80, 115], ['Бостон', 'Бостон', 'Boston', 175, 160],
+    ['Нью-Йорк', 'Нью-Йорк', 'New York', 95, 225], ['Эдинбург', 'Эдинбург', 'Edinburgh', 285, 60], ['Лондон', 'Лондон', 'London', 320, 140],
+    ['Париж', 'Париж', 'Paris', 285, 220], ['Цюрих', 'Цюрих', 'Zurich', 385, 235], ['Берлин', 'Берлин', 'Berlin', 420, 125],
+    ['Пекин', 'Бейжің', 'Beijing', 640, 160], ['Сеул', 'Сеул', 'Seoul', 700, 85], ['Токио', 'Токио', 'Tokyo', 735, 185],
+    ['Сингапур', 'Сингапур', 'Singapore', 590, 280], ['Сидней', 'Сидней', 'Sydney', 740, 318], ['Мельбурн', 'Мельбурн', 'Melbourne', 640, 360],
+  ]
+  const ix = { ru: 0, kz: 1, en: 2 }[L]
+  const X = (v) => v, Y = (v) => v
+  const ns = 'http://www.w3.org/2000/svg', el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); return e }
+  const grid = el('g', { class: 'grid' }); for (let x = 0; x <= 800; x += 80) grid.append(el('line', { x1: x, y1: 0, x2: x, y2: 400 })); for (let y = 0; y <= 400; y += 80) grid.append(el('line', { x1: 0, y1: y, x2: 800, y2: y })); svg.append(grid)
+  const routes = el('g', {}); svg.append(routes)
+  const nodes = C.map((c, i) => { const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }); const x = X(c[3]), y = Y(c[4]); g.append(el('circle', { cx: x, cy: y, r: 9 })); const t = el('text', { x: x + (x > 700 ? -14 : 14), y: y + 4, 'text-anchor': x > 700 ? 'end' : 'start' }); t.textContent = c[ix]; g.append(t); g.dataset.i = i; svg.append(g); return { g, x, y } })
+  let route = [], step = 0, done = +(sessionStorage.getItem('bw-routes') || 0), len = 2
+  const task = document.getElementById('task'), score = document.getElementById('score')
+  const draw = () => {
+    task.textContent = ''
+    route.forEach((c, k) => { if (k) { const i = document.createElement('i'); i.textContent = '→'; task.append(i) } const s = document.createElement('span'); s.textContent = C[c][ix]; if (k < step) s.className = 'done'; task.append(s) })
+    nodes.forEach((n, i) => { n.g.classList.toggle('is-start', i === route[0]); n.g.classList.toggle('is-hit', route.slice(0, step).includes(i)); n.g.classList.toggle('is-next', i === route[step]) })
+    score.textContent = `${T.score}: ${done}`
+  }
+  const fresh = () => { routes.textContent = ''; const pool = [...C.keys()].slice(1).sort(() => Math.random() - 0.5); route = [0, ...pool.slice(0, len)]; step = 1; draw() }
+  const arc = (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - Math.min(90, Math.hypot(b.x - a.x, b.y - a.y) / 4); routes.append(el('path', { class: 'fly', d: `M${a.x} ${a.y} Q${mx} ${my} ${b.x} ${b.y}`, pathLength: 1 })) }
+  const pick = (i) => {
+    if (i === route[step]) { arc(nodes[route[step - 1]], nodes[i]); step++; if (step === route.length) { done++; sessionStorage.setItem('bw-routes', done); len = Math.min(6, len + 1); draw(); setTimeout(fresh, 900); return } draw() }
+    else if (!route.slice(0, step).includes(i)) { const g = nodes[i].g; g.classList.remove('is-miss'); void g.getBBox(); g.classList.add('is-miss') }
+  }
+  nodes.forEach((n, i) => { n.g.addEventListener('click', () => pick(i)); n.g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i) } }) })
+  document.getElementById('skip').onclick = fresh
+  document.getElementById('retry').onclick = () => location.reload()
+  addEventListener('online', () => location.reload())
+  fresh()
+})()
+</script>
+</body>
+</html>
