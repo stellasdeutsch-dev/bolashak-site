@@ -20,8 +20,7 @@ main{flex:1;padding:24px 20px 40px}
 .task i{font-style:normal;color:var(--mute)}
 .task .sum{margin-left:auto;color:var(--mute)}
 .hint{margin:0;color:var(--mute);font-size:15px}
-.scroll{overflow-x:auto;border-radius:12px;-webkit-overflow-scrolling:touch}
-svg{display:block;width:100%;height:auto;background:var(--paper);touch-action:manipulation}
+svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:12px;touch-action:manipulation}
 .road{stroke:#b9c0da;stroke-width:2}
 .road.can{stroke:var(--ind);stroke-width:2.5}
 .km rect{fill:#fff}.km text{font:600 14px system-ui,sans-serif;fill:var(--mute);text-anchor:middle}
@@ -52,8 +51,11 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
 .go{background:var(--ink);color:#fff}.go:hover{background:var(--ind)}
 .ghost{background:#fff;border-color:var(--line);color:var(--ink)}.ghost:hover{border-color:var(--ind);color:var(--ind)}
 .result .ghost{justify-self:start}
-@media(max-width:520px){.btns,.btns button{width:100%}}
-@media(max-width:700px){svg{min-width:640px}}
+@media(max-width:600px){
+  .head{padding:16px 16px 18px}h1{font-size:24px;margin-bottom:4px}.head p{font-size:15px}main{padding:14px 12px 24px}.card{padding:12px;gap:10px}
+  .task{font-size:14px;gap:6px}.yl{display:none}.card{gap:8px}.hint{line-height:1.4}.task b{padding:3px 9px}.hint{font-size:14px}
+  .btns{display:grid;grid-template-columns:1fr 1fr}.btns .go{grid-column:1/-1}.btns button{width:100%;padding:10px 12px;font-size:15px}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mine,.best{stroke-dashoffset:0}}
 </style>
 </head>
@@ -62,7 +64,7 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
 <main><div class="wrap card">
   <div class="task" id="task" aria-live="polite"></div>
   <p class="hint" data-t="hint"></p>
-  <div class="scroll" id="scroll"><svg id="map" viewBox="0 0 920 490" role="group"></svg></div>
+  <svg id="map" viewBox="0 0 920 490" role="group"></svg>
   <div class="result" id="result" aria-live="polite"><p id="verdict"></p><button class="ghost" id="how" type="button" data-t="how"></button><p id="explain" hidden data-t="explain"></p></div>
   <div class="row"><span class="score" id="score"></span><span class="btns"><button class="ghost" id="again" type="button" data-t="again"></button><button class="ghost" id="skip" type="button" data-t="skip"></button><button class="go" id="retry" type="button" data-t="retry"></button></span></div>
 </div></main>
@@ -70,9 +72,9 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
 (() => {
   const L = (location.pathname.match(/\/(ru|kz|en)(\/|$)/) || [, 'ru'])[1]
   const T = {
-    ru: { title: 'Нет соединения', lead: 'Страница откроется, когда интернет вернётся. А пока задача: долететь из Астаны в другой город самым коротким путём.', hint: 'Нажимайте города, соединённые линией с тем, где вы сейчас. Числа на линиях: расстояние в тысячах километров.', yours: 'Ваш путь', unit: 'тыс. км', best: 'Это самый короткий путь. Отлично!', longer: 'Есть путь короче', how: 'Как ищет компьютер', explain: 'Компьютер не угадывает. Он идёт от Астаны во все стороны и всегда сначала проверяет самый близкий город. Число у города: самый короткий путь до него. Когда очередь доходит до цели, ответ готов. Так ищут дорогу навигаторы, и с таких задач начинают изучать искусственный интеллект.', again: 'Начать заново', skip: 'Другой маршрут', retry: 'Проверить соединение', score: 'Самых коротких путей', map: 'Карта городов' },
-    kz: { title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда бет ашылады. Әзірге есеп: Астанадан басқа қалаға ең қысқа жолмен ұшып жетіңіз.', hint: 'Қазір тұрған қалаңызбен сызық арқылы жалғанған қалаларды басыңыз. Сызықтағы сандар: мың шақырыммен қашықтық.', yours: 'Сіздің жолыңыз', unit: 'мың км', best: 'Бұл ең қысқа жол. Тамаша!', longer: 'Бұдан қысқа жол бар', how: 'Компьютер қалай іздейді', explain: 'Компьютер болжамайды. Ол Астанадан барлық бағытқа тарайды және әрқашан алдымен ең жақын қаланы тексереді. Қала жанындағы сан: оған дейінгі ең қысқа жол. Кезек мақсатқа жеткенде жауап дайын. Навигаторлар жолды осылай іздейді, жасанды интеллектті оқу да осындай есептерден басталады.', again: 'Қайта бастау', skip: 'Басқа бағыт', retry: 'Байланысты тексеру', score: 'Ең қысқа жолдар', map: 'Қалалар картасы' },
-    en: { title: 'No connection', lead: 'The page will open once you are back online. Meanwhile, a puzzle: fly from Astana to another city by the shortest route.', hint: 'Tap a city joined by a line to the one you are in. Numbers on the lines are distances in thousands of kilometres.', yours: 'Your route', unit: 'thousand km', best: 'That is the shortest route. Well done!', longer: 'There is a shorter route', how: 'How a computer searches', explain: 'A computer does not guess. It spreads out from Astana in every direction and always checks the nearest city first. The number by each city is the shortest way to it. Once the goal comes up, the answer is ready. Navigation apps find routes this way, and puzzles like this are where learning artificial intelligence begins.', again: 'Start over', skip: 'Another route', retry: 'Check connection', score: 'Shortest routes found', map: 'Map of cities' },
+    ru: { title: 'Нет соединения', lead: 'Нужная страница откроется сама, как только интернет вернётся.', hint: 'А пока задача: долетите из Астаны в жёлтый город самым коротким путём. Нажимайте города, соединённые линией. Числа на линиях: тысячи километров.', yours: 'Ваш путь', unit: 'тыс. км', best: 'Это самый короткий путь. Отлично!', longer: 'Есть путь короче', how: 'Как ищет компьютер', explain: 'Компьютер не угадывает. Он идёт от Астаны во все стороны и всегда сначала проверяет самый близкий город. Число у города: самый короткий путь до него. Когда очередь доходит до цели, ответ готов. Так ищут дорогу навигаторы, и с таких задач начинают изучать искусственный интеллект.', again: 'Начать заново', skip: 'Другой маршрут', retry: 'Открыть страницу снова', still: 'Интернета пока нет', score: 'Самых коротких путей', map: 'Карта городов' },
+    kz: { title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда керекті бет өзі ашылады.', hint: 'Әзірге есеп: Астанадан сары қалаға ең қысқа жолмен ұшып жетіңіз. Сызықпен жалғанған қалаларды басыңыз. Сызықтағы сандар: мың шақырым.', yours: 'Сіздің жолыңыз', unit: 'мың км', best: 'Бұл ең қысқа жол. Тамаша!', longer: 'Бұдан қысқа жол бар', how: 'Компьютер қалай іздейді', explain: 'Компьютер болжамайды. Ол Астанадан барлық бағытқа тарайды және әрқашан алдымен ең жақын қаланы тексереді. Қала жанындағы сан: оған дейінгі ең қысқа жол. Кезек мақсатқа жеткенде жауап дайын. Навигаторлар жолды осылай іздейді, жасанды интеллектті оқу да осындай есептерден басталады.', again: 'Қайта бастау', skip: 'Басқа бағыт', retry: 'Бетті қайта ашу', still: 'Интернет әлі жоқ', score: 'Ең қысқа жолдар', map: 'Қалалар картасы' },
+    en: { title: 'No connection', lead: 'The page you wanted will open by itself once you are back online.', hint: 'Meanwhile, a puzzle: fly from Astana to the yellow city by the shortest route. Tap cities joined by a line. Numbers on the lines are thousands of kilometres.', yours: 'Your route', unit: 'thousand km', best: 'That is the shortest route. Well done!', longer: 'There is a shorter route', how: 'How a computer searches', explain: 'A computer does not guess. It spreads out from Astana in every direction and always checks the nearest city first. The number by each city is the shortest way to it. Once the goal comes up, the answer is ready. Navigation apps find routes this way, and puzzles like this are where learning artificial intelligence begins.', again: 'Start over', skip: 'Another route', retry: 'Open the page again', still: 'Still no internet', score: 'Shortest routes found', map: 'Map of cities' },
   }[L]
   document.documentElement.lang = L === 'kz' ? 'kk' : L
   document.querySelectorAll('[data-t]').forEach((n) => (n.textContent = T[n.dataset.t]))
@@ -102,25 +104,37 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
   const nb = C.map(() => []); E.forEach(([a, b], k) => { nb[a].push([b, W[k], k]); nb[b].push([a, W[k], k]) })
   const fmt = (v) => (L === 'en' ? v.toFixed(1) : v.toFixed(1).replace('.', ','))
   const ns = 'http://www.w3.org/2000/svg', el = (n, a, p) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); if (p) p.append(e); return e }
-  const xy = (i) => [C[i][5], C[i][6]]
+  // a phone gets its own upright map, so the whole map fits the screen without sideways scrolling: x, y on 410 × 550; where the name sits
+  const M = { Toronto: [40, 62, 't'], Edinburgh: [190, 36, 'r'], Boston: [75, 148, 'b'], London: [190, 112, 't'], 'New York': [40, 228, 'b'], Paris: [130, 210, 'b'],
+    Zurich: [215, 214, 'b'], Berlin: [305, 132, 't'], Astana: [305, 272, 'r'], Beijing: [250, 362, 'l'], Seoul: [355, 322, 'r'], Tokyo: [330, 410, 'r'],
+    Singapore: [130, 420, 'l'], Sydney: [320, 500, 'r'], Melbourne: [200, 527, 'l'] }
+  const phone = matchMedia('(max-width: 600px)')
+  const at = (i) => (phone.matches ? M[C[i][2]] : [C[i][5], C[i][6], C[i][7]])
+  const xy = (i) => at(i).slice(0, 2)
   const roads = el('g', {}, svg), trails = el('g', {}, svg), labels = el('g', {}, svg), cities = el('g', {}, svg), tags = el('g', {}, svg)
-  const roadEls = E.map(([a, b], k) => {
-    const [x1, y1] = xy(a), [x2, y2] = xy(b)
-    const r = el('line', { class: 'road', x1, y1, x2, y2 }, roads)
-    const g = el('g', { class: 'km' }, labels), t = el('text', { x: (x1 + x2) / 2, y: (y1 + y2) / 2 + 4 }, g); t.textContent = fmt(W[k])
-    el('rect', { x: (x1 + x2) / 2 - 17, y: (y1 + y2) / 2 - 10, width: 34, height: 19, rx: 9 }, g).after(t)
-    return r
-  })
-  const nodes = C.map((c, i) => {
-    const [x, y] = xy(i), side = c[7]
-    const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }, cities)
-    el('rect', { class: 'ring', x: x - 12, y: y - 12, width: 24, height: 24, rx: 5 }, g)
-    el('rect', { x: x - 7, y: y - 7, width: 14, height: 14, rx: 2 }, g)
-    const [dx, dy, an] = { t: [0, -16, 'middle'], b: [0, 26, 'middle'], l: [-15, 5, 'end'], r: [15, 5, 'start'], br: [12, 22, 'start'] }[side]
-    const t = el('text', { x: x + dx, y: y + dy, 'text-anchor': an }, g); t.textContent = c[ix]
-    g.addEventListener('click', () => pick(i)); g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i) } })
-    return g
-  })
+  let roadEls = [], nodes = []
+  const build = () => {
+    svg.setAttribute('viewBox', phone.matches ? '0 0 410 550' : '0 0 920 490')
+    ;[roads, trails, labels, cities, tags].forEach((g) => (g.textContent = ''))
+    roadEls = E.map(([a, b], k) => {
+      const [x1, y1] = xy(a), [x2, y2] = xy(b)
+      const r = el('line', { class: 'road', x1, y1, x2, y2 }, roads)
+      const g = el('g', { class: 'km' }, labels)
+      el('rect', { x: (x1 + x2) / 2 - 17, y: (y1 + y2) / 2 - 10, width: 34, height: 19, rx: 9 }, g)
+      el('text', { x: (x1 + x2) / 2, y: (y1 + y2) / 2 + 4 }, g).textContent = fmt(W[k])
+      return r
+    })
+    nodes = C.map((c, i) => {
+      const [x, y, side] = at(i)
+      const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }, cities)
+      el('rect', { class: 'ring', x: x - 12, y: y - 12, width: 24, height: 24, rx: 5 }, g)
+      el('rect', { x: x - 7, y: y - 7, width: 14, height: 14, rx: 2 }, g)
+      const [dx, dy, an] = { t: [0, -16, 'middle'], b: [0, 26, 'middle'], l: [-15, 5, 'end'], r: [15, 5, 'start'], br: [12, 22, 'start'] }[side]
+      el('text', { x: x + dx, y: y + dy, 'text-anchor': an }, g).textContent = c[ix]
+      g.addEventListener('click', () => pick(i)); g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i) } })
+      return g
+    })
+  }
   const line = (a, b, cls, p) => { const [x1, y1] = xy(a), [x2, y2] = xy(b); return el('path', { class: cls, d: `M${x1} ${y1}L${x2} ${y2}`, pathLength: 1 }, p) }
   // shortest routes from the start, in the order a uniform-cost search settles the cities
   const search = (s, goal) => {
@@ -145,7 +159,7 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
     roadEls.forEach((r, k) => r.classList.toggle('can', !finished && E[k].includes(here())))
     task.textContent = ''
     const a = document.createElement('b'); a.textContent = C[START][ix]; const i = document.createElement('i'); i.textContent = '→'; const b = document.createElement('b'); b.className = 'goal'; b.textContent = C[goal][ix]
-    const s = document.createElement('span'); s.className = 'sum'; s.textContent = `${T.yours}: ${fmt(dist)} ${T.unit}`
+    const s = document.createElement('span'); s.className = 'sum'; const y = document.createElement('span'); y.className = 'yl'; y.textContent = `${T.yours}: `; s.append(y, `${fmt(dist)} ${T.unit}`)
     task.append(a, i, b, s)
     score.textContent = `${T.score}: ${wins}`
   }
@@ -183,7 +197,7 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
     const tag = (u) => {
       if (prev[u] >= 0) line(prev[u], u, 'seen', trails)
       // the tag goes on the side opposite the city's name
-      const [x0, y0] = xy(u), [ox, oy] = { t: [0, 20], b: [0, -20], l: [32, 0], r: [-32, 0], br: [-32, 0] }[C[u][7]], x = x0 + ox, y = y0 + oy
+      const [x0, y0] = xy(u), [ox, oy] = { t: [0, 20], b: [0, -20], l: [32, 0], r: [-32, 0], br: [-32, 0] }[at(u)[2]], x = x0 + ox, y = y0 + oy
       const g = el('g', { class: 'tag' }, tags)
       el('rect', { x: x - 19, y: y - 10, width: 38, height: 19, rx: 9 }, g)
       const t = el('text', { x, y: y + 5 }, g); t.textContent = fmt(d[u])
@@ -196,11 +210,12 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
   }
   document.getElementById('again').onclick = restart
   document.getElementById('skip').onclick = fresh
-  document.getElementById('retry').onclick = () => location.reload()
+  // try the page again; with no connection at all, say so and keep the game as it is
+  const retry = document.getElementById('retry')
+  retry.onclick = () => { if (navigator.onLine) return location.reload(); retry.textContent = T.still; setTimeout(() => (retry.textContent = T.retry), 2000) }
   addEventListener('online', () => location.reload())
-  fresh()
-  // on a phone the map scrolls sideways: start with Astana in view
-  const sc = document.getElementById('scroll'); if (sc.scrollWidth > sc.clientWidth) sc.scrollLeft = (C[START][5] / 920) * sc.scrollWidth - sc.clientWidth / 2
+  build(); fresh()
+  phone.addEventListener('change', () => { build(); restart() })
 })()
 </script>
 </body>
