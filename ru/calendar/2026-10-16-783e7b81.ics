@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Центр международных программ · Ка
+ лендарь
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-16-783e7b81-ru@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Объявление. Международная стипендия
+  «Болашак»
+DESCRIPTION:Подать заявку на участие в конкурс
+ е на присуждение стипендии «Болашак» мо
+ жно до 16 октября 2026 года.\n\nhttps://stellasdeutsch-dev
+ .github.io/bolashak-site/ru/allnews/obyavlenie-mezhdunarodnaya-stipendiya-
+ bolashak
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/obyavleni
+ e-mezhdunarodnaya-stipendiya-bolashak
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

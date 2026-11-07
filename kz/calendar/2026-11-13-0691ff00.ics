@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-11-13-0691ff00-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Қазақстанның жоғары оқу орындарына 
+ халықаралық білім алу және Ғылыми тағыл
+ ымдамалардан өту мүмкіндіктері танысты
+ рылды
+DESCRIPTION:Естеріңізге сала кетейік\, «Ғылыми
+  тағылымдамалар» бағдарламасы бойынша к
+ онкурстық іріктеуге құжат қабылдау мерз
+ імі 2026 жылғы 13 қарашаға дейін ұзартылды.\
+ n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

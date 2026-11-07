@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-16-dc15fafa-kz@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Хабарландыру. «Болашақ» халықаралық
+  стипендиясы
+DESCRIPTION:«Болашақ» стипендиясына конкурсқ
+ а қатысу үшін өтінімдерді 2026 жылғы 16 қаз
+ анға дейін беруге болады.\n\nhttps://stellasdeutsch-d
+ ev.github.io/bolashak-site/kz/allnews/obyavlenie-mezhdunarodnaya-stipendiy
+ a-bolashak
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/obyavleni
+ e-mezhdunarodnaya-stipendiya-bolashak
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

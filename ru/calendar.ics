@@ -1,0 +1,170 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Центр международных программ · Ка
+ лендарь
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-04-13-41f59430-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20270101
+SUMMARY:Стартовал прием документов по прогр
+ аммам «Болашак» и «Научные стажировки»
+DESCRIPTION:Конкурсный отбор будет проводитьс
+ я в период с 13 апреля по 31 декабря 2026 года
+ .\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startov
+ al-priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-04-0507d731-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Проект «Амбассадор программы «Болаш
+ ак» запускается в новом учебном году!
+DESCRIPTION:📥 Прием заявок: до 4 октября 2026 год
+ а\;\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/proe
+ kt-ambassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-09-90073156-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:Проект «Амбассадор программы «Болаш
+ ак» запускается в новом учебном году!
+DESCRIPTION:💬 Проведение собеседований: до 9 о
+ ктября 2026 года.\n\nhttps://stellasdeutsch-dev.github.io/bolash
+ ak-site/ru/allnews/proekt-ambassador-programmy-bolashak-zapuskaetsya-v-nov
+ om-uchebnom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-16-783e7b81-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Объявление. Международная стипендия
+  «Болашак»
+DESCRIPTION:Подать заявку на участие в конкурс
+ е на присуждение стипендии «Болашак» мо
+ жно до 16 октября 2026 года.\n\nhttps://stellasdeutsch-dev
+ .github.io/bolashak-site/ru/allnews/obyavlenie-mezhdunarodnaya-stipendiya-
+ bolashak
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/obyavleni
+ e-mezhdunarodnaya-stipendiya-bolashak
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-16-a1ed6fcf-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Стартовал прием документов по прогр
+ аммам «Болашак» и «Научные стажировки»
+DESCRIPTION:Прием документов для участия в кон
+ курсном отборе на присуждение междунаро
+ дной стипендии «Болашак» начнется 16 мар
+ та и завершится 16 октября.\n\nhttps://stellasdeutsch-
+ dev.github.io/bolashak-site/ru/allnews/startoval-priem-dokumentov-po-progr
+ ammam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-30-22438394-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Объявление. Программа «Научные стаж
+ ировки»
+DESCRIPTION:Документы для участия в конкурсе н
+ а прохождение научной стажировки за руб
+ ежом принимаются до 30 октября 2026 года.\n\nh
+ ttps://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/obyavlenie-pr
+ ogramma-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/obyavleni
+ e-programma-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-30-5dcaea76-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Стартовал прием документов по прогр
+ аммам «Болашак» и «Научные стажировки»
+DESCRIPTION:Прием документов для участия в кон
+ курсном отборе на присуждение стипендии
+  по программе «Научные стажировки» начн
+ ется 16 марта и завершится 30 октября.\n\nhttps
+ ://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startoval-priem-d
+ okumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-13-3e9f552b-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Вузам Казахстана презентовали возмо
+ жности международного образования и нау
+ чных стажировок
+DESCRIPTION:Напоминаем\, что срок приема докум
+ ентов для участия в конкурсном отборе по
+  программе «Научные стажировки» продлен
+  до 13 ноября 2026 года.\n\nhttps://stellasdeutsch-dev.github.
+ io/bolashak-site/ru/allnews/vuzam-kazahstana-prezentovali-vozmozhnosti-mez
+ hdunarodnogo-obrazovaniya-i-nauchnyh-stazhirovok
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-13-84f15735-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Продлен срок приема документов на пр
+ ограмму «Научные стажировки»
+DESCRIPTION:Сообщаем\, что срок приема докумен
+ тов для участия в конкурсном отборе по п
+ рограмме «Научные стажировки» продлен д
+ о 13 ноября 2026 года.\n\nhttps://stellasdeutsch-dev.github.io/
+ bolashak-site/ru/allnews/prodlen-srok-priema-dokumentov-na-programmu-nauch
+ nye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/prodlen-s
+ rok-priema-dokumentov-na-programmu-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2027-04-01-36ac6c36-ru@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Стипендия Tokyo Global Partner для магистрату
+ ры и докторантуры в Японии
+DESCRIPTION:Текущий набор: начало обучения — 1 
+ апреля 2027 года.\n\nhttps://stellasdeutsch-dev.github.io/bolash
+ ak-site/ru/allnews/stipendiya-tokyo-global-partner-dlya-magistratury-i-dok
+ torantury-v-yaponii
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/stipendiy
+ a-tokyo-global-partner-dlya-magistratury-i-doktorantury-v-yaponii
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

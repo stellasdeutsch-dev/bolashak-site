@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2027-04-01-8d139aca-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Жапонияда магистратура және доктора
+ нтурада білім алуға арналған Tokyo Global Partner
+  стипендиясы
+DESCRIPTION:Ағымдағы қабылдау: оқу 2027 жылғы 1 с
+ әуірде басталады.\n\nhttps://stellasdeutsch-dev.github.io/b
+ olashak-site/kz/allnews/stipendiya-tokyo-global-partner-dlya-magistratury-
+ i-doktorantury-v-yaponii
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/stipendiy
+ a-tokyo-global-partner-dlya-magistratury-i-doktorantury-v-yaponii
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

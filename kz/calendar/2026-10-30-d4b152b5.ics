@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-30-d4b152b5-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:«Болашақ» және «Ғылыми тағылымдамал
+ ар» бағдарламасы бойынша құжат қабылдау
+  басталды
+DESCRIPTION:«Ғылыми тағылымдамалар» бағдарла
+ масы бойынша стипендия тағайындауға арн
+ алған конкурстық іріктеуге қатысу үшін 
+ құжат қабылдау 16 наурызда басталып\, 30 қа
+ занда аяқталады.\n\nhttps://stellasdeutsch-dev.github.io/bol
+ ashak-site/kz/allnews/startoval-priem-dokumentov-po-programmam-bolashak-i-
+ nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

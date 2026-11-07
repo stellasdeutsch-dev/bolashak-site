@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Центр международных программ · Ка
+ лендарь
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-04-13-41f59430-ru@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20270101
+SUMMARY:Стартовал прием документов по прогр
+ аммам «Болашак» и «Научные стажировки»
+DESCRIPTION:Конкурсный отбор будет проводитьс
+ я в период с 13 апреля по 31 декабря 2026 года
+ .\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startov
+ al-priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

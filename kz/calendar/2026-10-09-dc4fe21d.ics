@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-09-dc4fe21d-kz@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:«Болашақ» бағдарламасының Амбассад
+ оры» жобасы кезекті оқу жылында қайта ба
+ сталуда!
+DESCRIPTION:💬 Сұхбат өткізу: 2026 жылғы 9 қазанғ
+ а дейін\;\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/kz/a
+ llnews/proekt-ambassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-
+ godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

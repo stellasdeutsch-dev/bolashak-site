@@ -1,0 +1,180 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-04-13-3d55782e-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20270101
+SUMMARY:«Болашақ» және «Ғылыми тағылымдамал
+ ар» бағдарламасы бойынша құжат қабылдау
+  басталды
+DESCRIPTION:Конкурстық іріктеу 2026 жылғы 13 сәуі
+ р мен 31 желтоқсан аралығында өтеді.\n\nhttps:
+ //stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval-priem-do
+ kumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-04-5153dcb0-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:«Болашақ» бағдарламасының Амбассад
+ оры» жобасы кезекті оқу жылында қайта ба
+ сталуда!
+DESCRIPTION:📥 Өтінім қабылдау: 2026 жылғы 4 қаза
+ нға дейін\;\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/
+ kz/allnews/proekt-ambassador-programmy-bolashak-zapuskaetsya-v-novom-ucheb
+ nom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-09-dc4fe21d-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:«Болашақ» бағдарламасының Амбассад
+ оры» жобасы кезекті оқу жылында қайта ба
+ сталуда!
+DESCRIPTION:💬 Сұхбат өткізу: 2026 жылғы 9 қазанғ
+ а дейін\;\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/kz/a
+ llnews/proekt-ambassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-
+ godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-16-dc15fafa-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Хабарландыру. «Болашақ» халықаралық
+  стипендиясы
+DESCRIPTION:«Болашақ» стипендиясына конкурсқ
+ а қатысу үшін өтінімдерді 2026 жылғы 16 қаз
+ анға дейін беруге болады.\n\nhttps://stellasdeutsch-d
+ ev.github.io/bolashak-site/kz/allnews/obyavlenie-mezhdunarodnaya-stipendiy
+ a-bolashak
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/obyavleni
+ e-mezhdunarodnaya-stipendiya-bolashak
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-16-dac27a16-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:«Болашақ» және «Ғылыми тағылымдамал
+ ар» бағдарламасы бойынша құжат қабылдау
+  басталды
+DESCRIPTION:Халықаралық «Болашақ» стипендияс
+ ын тағайындауға арналған конкурстық ірі
+ ктеуге қатысу үшін құжаттарды қабылдау 1
+ 6 наурызда басталып\, 16 қазанда аяқталады
+ .\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startov
+ al-priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-30-a1f98f34-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Хабарландыру. «Ғылыми тағылымдамала
+ р» бағдарламасы
+DESCRIPTION:«Ғылыми тағылымдамалар» бағдарла
+ масының конкурсына қатысу үшін құжаттар
+  2026 жылғы 30 қазанға дейін қабылданады.\n\nh
+ ttps://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/obyavlenie-pr
+ ogramma-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/obyavleni
+ e-programma-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-30-d4b152b5-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:«Болашақ» және «Ғылыми тағылымдамал
+ ар» бағдарламасы бойынша құжат қабылдау
+  басталды
+DESCRIPTION:«Ғылыми тағылымдамалар» бағдарла
+ масы бойынша стипендия тағайындауға арн
+ алған конкурстық іріктеуге қатысу үшін 
+ құжат қабылдау 16 наурызда басталып\, 30 қа
+ занда аяқталады.\n\nhttps://stellasdeutsch-dev.github.io/bol
+ ashak-site/kz/allnews/startoval-priem-dokumentov-po-programmam-bolashak-i-
+ nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-13-0691ff00-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Қазақстанның жоғары оқу орындарына 
+ халықаралық білім алу және Ғылыми тағыл
+ ымдамалардан өту мүмкіндіктері танысты
+ рылды
+DESCRIPTION:Естеріңізге сала кетейік\, «Ғылыми
+  тағылымдамалар» бағдарламасы бойынша к
+ онкурстық іріктеуге құжат қабылдау мерз
+ імі 2026 жылғы 13 қарашаға дейін ұзартылды.\
+ n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-13-c5d0c67b-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:«Ғылыми тағылымдамалар» бағдарлама
+ сына құжат қабылдау мерзімі ұзартылды
+DESCRIPTION:«Ғылыми тағылымдамалар» бағдарла
+ масы бойынша конкурстық іріктеуге қатыс
+ у үшін құжаттарды қабылдау мерзімі 2026 жы
+ лғы 13 қарашаға дейін ұзартылғанын хабар
+ лаймыз.\n\nhttps://stellasdeutsch-dev.github.io/bolashak-site/kz/all
+ news/prodlen-srok-priema-dokumentov-na-programmu-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/prodlen-s
+ rok-priema-dokumentov-na-programmu-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2027-04-01-8d139aca-kz@bolashak.gov.kz
+DTSTAMP:20261107T185345Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270402
+SUMMARY:Жапонияда магистратура және доктора
+ нтурада білім алуға арналған Tokyo Global Partner
+  стипендиясы
+DESCRIPTION:Ағымдағы қабылдау: оқу 2027 жылғы 1 с
+ әуірде басталады.\n\nhttps://stellasdeutsch-dev.github.io/b
+ olashak-site/kz/allnews/stipendiya-tokyo-global-partner-dlya-magistratury-
+ i-doktorantury-v-yaponii
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/stipendiy
+ a-tokyo-global-partner-dlya-magistratury-i-doktorantury-v-yaponii
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

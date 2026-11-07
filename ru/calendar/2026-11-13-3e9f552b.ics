@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Центр международных программ · Ка
+ лендарь
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-11-13-3e9f552b-ru@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Вузам Казахстана презентовали возмо
+ жности международного образования и нау
+ чных стажировок
+DESCRIPTION:Напоминаем\, что срок приема докум
+ ентов для участия в конкурсном отборе по
+  программе «Научные стажировки» продлен
+  до 13 ноября 2026 года.\n\nhttps://stellasdeutsch-dev.github.
+ io/bolashak-site/ru/allnews/vuzam-kazahstana-prezentovali-vozmozhnosti-mez
+ hdunarodnogo-obrazovaniya-i-nauchnyh-stazhirovok
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

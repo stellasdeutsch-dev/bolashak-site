@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-30-a1f98f34-kz@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Хабарландыру. «Ғылыми тағылымдамала
+ р» бағдарламасы
+DESCRIPTION:«Ғылыми тағылымдамалар» бағдарла
+ масының конкурсына қатысу үшін құжаттар
+  2026 жылғы 30 қазанға дейін қабылданады.\n\nh
+ ttps://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/obyavlenie-pr
+ ogramma-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/obyavleni
+ e-programma-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

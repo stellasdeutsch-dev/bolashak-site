@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//KZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Халықаралық бағдарламалар орталы
+ ғы · Күнтізбе
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-04-13-3d55782e-kz@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20270101
+SUMMARY:«Болашақ» және «Ғылыми тағылымдамал
+ ар» бағдарламасы бойынша құжат қабылдау
+  басталды
+DESCRIPTION:Конкурстық іріктеу 2026 жылғы 13 сәуі
+ р мен 31 желтоқсан аралығында өтеді.\n\nhttps:
+ //stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval-priem-do
+ kumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/kz/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

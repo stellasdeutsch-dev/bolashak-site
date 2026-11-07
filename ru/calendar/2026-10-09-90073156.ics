@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Центр международных программ · Ка
+ лендарь
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-09-90073156-ru@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:Проект «Амбассадор программы «Болаш
+ ак» запускается в новом учебном году!
+DESCRIPTION:💬 Проведение собеседований: до 9 о
+ ктября 2026 года.\n\nhttps://stellasdeutsch-dev.github.io/bolash
+ ak-site/ru/allnews/proekt-ambassador-programmy-bolashak-zapuskaetsya-v-nov
+ om-uchebnom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

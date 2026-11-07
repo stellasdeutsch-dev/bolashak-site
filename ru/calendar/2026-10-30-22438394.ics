@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Центр международных программ · Ка
+ лендарь
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-30-22438394-ru@bolashak.gov.kz
+DTSTAMP:20261107T185344Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Объявление. Программа «Научные стаж
+ ировки»
+DESCRIPTION:Документы для участия в конкурсе н
+ а прохождение научной стажировки за руб
+ ежом принимаются до 30 октября 2026 года.\n\nh
+ ttps://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/obyavlenie-pr
+ ogramma-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/ru/allnews/obyavleni
+ e-programma-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
