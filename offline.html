@@ -1,11 +1,11 @@
 <!doctype html>
 <html data-base="/bolashak-site" lang="ru">
 <head><meta name="robots" content="noindex">
-<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-EHhtzC63m9OWGyQTt7Vr+ukXUF+3IxLVTzepX2L9WW4=' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu; font-src 'self'; connect-src 'self'; media-src 'self' https://bolashak.gov.kz; frame-src 'self' http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu https://view.officeapps.live.com https://www.facebook.com https://www.youtube-nocookie.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-LktYpurwXQUvslvvghjIHVzTfC1RQbgY8BjcU9olEGA=' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu; font-src 'self'; connect-src 'self'; media-src 'self' https://bolashak.gov.kz; frame-src 'self' http://stipendiumhungaricum.hu https://bolashak.gov.kz https://commons.wikimedia.org https://stipendia.portalvs.sk https://stipendiumhungaricum.hu https://view.officeapps.live.com https://www.facebook.com https://www.youtube-nocookie.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Нет соединения · Bolashak · тестовая версия</title>
 <style>
-:root{--ind:#384899;--deep:#27346f;--sun:#FFC629;--ink:#0e1230;--mute:#5b6178;--line:#dfe3ef;--paper:#f3f5fb;--soft:#c9d0ee}
+:root{--ind:#384899;--deep:#27346F;--sun:#FFC629;--ink:#0F1535;--mute:#565D75;--line:#DDE0EC;--paper:#F4F5FB;--soft:#C9CFEA}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:#fff;color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column}
 .head{background:var(--ind);color:#fff;padding:28px 20px 32px}
@@ -19,7 +19,7 @@ main{flex:1;padding:24px 20px 40px}
 .task b.goal{background:var(--sun);color:var(--ink)}
 .task i{font-style:normal;color:var(--mute)}
 .task .sum{margin-left:auto;color:var(--mute)}
-.hint{margin:0;color:var(--mute);font-size:15px}
+.hint{margin:0;color:var(--mute);font-size:15px;max-width:36em}
 svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:12px;touch-action:manipulation}
 .road{stroke:#b9c0da;stroke-width:2}
 .road.can{stroke:var(--ind);stroke-width:2.5}
@@ -30,7 +30,10 @@ svg{display:block;width:100%;height:auto;background:var(--paper);border-radius:1
 .city text{font:600 15px system-ui,sans-serif;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
 .city.on rect{fill:var(--ind);stroke:var(--ind)}
 .city.goal rect{fill:var(--sun);stroke:var(--ink)}
-.city.can .ring{stroke:var(--sun)}
+.city.can .ring{stroke:var(--ind)}
+.city .hit{fill:transparent;stroke:none}
+.call{margin:12px 0 0;color:#dfe4ff}.call a{color:#fff;font-weight:700}
+.head .go{margin-top:16px;background:var(--sun);color:var(--ink)}.head .go:hover{background:#FFD65C}
 .city:focus-visible .ring{stroke:var(--ink)}
 .city.miss{animation:miss .3s}
 @keyframes miss{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
@@ -60,21 +63,21 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
 </style>
 </head>
 <body><div role="note" style="background:#1B2350;color:#C9CFEA;font:400 12px/16px system-ui,sans-serif;padding:4px 16px;text-align:center"><style>.tn{display:none}:root[lang=ru] .tn-ru,:root[lang=kk] .tn-kz,:root[lang=en] .tn-en{display:inline}</style><span class="tn tn-ru">Тестовая версия редизайна. Это не официальный сайт. Официальный сайт: </span><span class="tn tn-kz">Қайта безендірудің сынақ нұсқасы. Бұл ресми сайт емес. Ресми сайт: </span><span class="tn tn-en">Test version of a redesign. This is not the official site. Official site: </span>bolashak.gov.kz</div>
-<header class="head"><div class="wrap"><h1 data-t="title">Нет соединения</h1><p data-t="lead"></p></div></header>
+<header class="head"><div class="wrap"><h1 data-t="title">Нет соединения</h1><p data-t="lead"></p><p class="call"><a href="tel:+77172769076">+7 (717) 276-90-76</a> · <span data-t="hours"></span></p><button class="go" id="retry" type="button" data-t="retry"></button></div></header>
 <main><div class="wrap card">
   <div class="task" id="task" aria-live="polite"></div>
   <p class="hint" data-t="hint"></p>
   <svg id="map" viewBox="0 0 920 490" role="group"></svg>
   <div class="result" id="result" aria-live="polite"><p id="verdict"></p><button class="ghost" id="how" type="button" data-t="how"></button><p id="explain" hidden data-t="explain"></p></div>
-  <div class="row"><span class="score" id="score"></span><span class="btns"><button class="ghost" id="again" type="button" data-t="again"></button><button class="ghost" id="skip" type="button" data-t="skip"></button><button class="go" id="retry" type="button" data-t="retry"></button></span></div>
+  <div class="row"><span class="score" id="score"></span><span class="btns"><button class="ghost" id="again" type="button" data-t="again"></button><button class="ghost" id="skip" type="button" data-t="skip"></button></span></div>
 </div></main>
 <script>
 (() => {
   const L = (location.pathname.match(/\/(ru|kz|en)(\/|$)/) || [, 'ru'])[1]
   const T = {
-    ru: { title: 'Нет соединения', lead: 'Нужная страница откроется сама, как только интернет вернётся.', hint: 'А пока задача: долетите из Астаны в жёлтый город самым коротким путём. Нажимайте города, соединённые линией. Числа на линиях: тысячи километров.', yours: 'Ваш путь', unit: 'тыс. км', best: 'Это самый короткий путь. Отлично!', longer: 'Есть путь короче', how: 'Как ищет компьютер', explain: 'Компьютер не угадывает. Он идёт от Астаны во все стороны и всегда сначала проверяет самый близкий город. Число у города: самый короткий путь до него. Когда очередь доходит до цели, ответ готов. Так ищут дорогу навигаторы, и с таких задач начинают изучать искусственный интеллект.', again: 'Начать заново', skip: 'Другой маршрут', retry: 'Открыть страницу снова', still: 'Интернета пока нет', score: 'Самых коротких путей', map: 'Карта городов' },
-    kz: { title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда керекті бет өзі ашылады.', hint: 'Әзірге есеп: Астанадан сары қалаға ең қысқа жолмен ұшып жетіңіз. Сызықпен жалғанған қалаларды басыңыз. Сызықтағы сандар: мың шақырым.', yours: 'Сіздің жолыңыз', unit: 'мың км', best: 'Бұл ең қысқа жол. Тамаша!', longer: 'Бұдан қысқа жол бар', how: 'Компьютер қалай іздейді', explain: 'Компьютер болжамайды. Ол Астанадан барлық бағытқа тарайды және әрқашан алдымен ең жақын қаланы тексереді. Қала жанындағы сан: оған дейінгі ең қысқа жол. Кезек мақсатқа жеткенде жауап дайын. Навигаторлар жолды осылай іздейді, жасанды интеллектті оқу да осындай есептерден басталады.', again: 'Қайта бастау', skip: 'Басқа бағыт', retry: 'Бетті қайта ашу', still: 'Интернет әлі жоқ', score: 'Ең қысқа жолдар', map: 'Қалалар картасы' },
-    en: { title: 'No connection', lead: 'The page you wanted will open by itself once you are back online.', hint: 'Meanwhile, a puzzle: fly from Astana to the yellow city by the shortest route. Tap cities joined by a line. Numbers on the lines are thousands of kilometres.', yours: 'Your route', unit: 'thousand km', best: 'That is the shortest route. Well done!', longer: 'There is a shorter route', how: 'How a computer searches', explain: 'A computer does not guess. It spreads out from Astana in every direction and always checks the nearest city first. The number by each city is the shortest way to it. Once the goal comes up, the answer is ready. Navigation apps find routes this way, and puzzles like this are where learning artificial intelligence begins.', again: 'Start over', skip: 'Another route', retry: 'Open the page again', still: 'Still no internet', score: 'Shortest routes found', map: 'Map of cities' },
+    ru: { hours: 'Рабочее время с понедельника по пятницу с 8:30 - 18:00. Время обеда: 13:00 - 14:30', stHere: 'вы здесь', stGoal: 'цель', stCan: 'можно лететь', stOn: 'на вашем маршруте', stNo: 'нет прямого перелёта', title: 'Нет соединения', lead: 'Нужная страница откроется сама, как только интернет вернётся.', hint: 'А пока задача: долетите из Астаны в жёлтый город самым коротким путём. Нажимайте города, соединённые линией. Числа на линиях: тысячи километров.', yours: 'Ваш путь', unit: 'тыс. км', best: 'Это самый короткий путь. Отлично!', longer: 'Есть путь короче', how: 'Как ищет компьютер', explain: 'Компьютер не угадывает. Он идёт от Астаны во все стороны и всегда сначала проверяет самый близкий город. Число у города: самый короткий путь до него. Когда очередь доходит до цели, ответ готов. Так ищут дорогу навигаторы, и с таких задач начинают изучать искусственный интеллект.', again: 'Начать заново', skip: 'Другой маршрут', retry: 'Открыть страницу снова', still: 'Интернета пока нет', score: 'Самых коротких путей', map: 'Карта городов' },
+    kz: { hours: 'Жұмыс уақыты дүйсенбіден жұмаға дейін 8:30-ден 18:00-ге дейін. Түскі ас уақыты: 13:00 - 14:30', stHere: 'сіз осындасыз', stGoal: 'мақсат', stCan: 'ұшуға болады', stOn: 'маршрутыңызда', stNo: 'тікелей рейс жоқ', title: 'Байланыс жоқ', lead: 'Интернет қайта қосылғанда керекті бет өзі ашылады.', hint: 'Әзірге есеп: Астанадан сары қалаға ең қысқа жолмен ұшып жетіңіз. Сызықпен жалғанған қалаларды басыңыз. Сызықтағы сандар: мың шақырым.', yours: 'Сіздің жолыңыз', unit: 'мың км', best: 'Бұл ең қысқа жол. Тамаша!', longer: 'Бұдан қысқа жол бар', how: 'Компьютер қалай іздейді', explain: 'Компьютер болжамайды. Ол Астанадан барлық бағытқа тарайды және әрқашан алдымен ең жақын қаланы тексереді. Қала жанындағы сан: оған дейінгі ең қысқа жол. Кезек мақсатқа жеткенде жауап дайын. Навигаторлар жолды осылай іздейді, жасанды интеллектті оқу да осындай есептерден басталады.', again: 'Қайта бастау', skip: 'Басқа бағыт', retry: 'Бетті қайта ашу', still: 'Интернет әлі жоқ', score: 'Ең қысқа жолдар', map: 'Қалалар картасы' },
+    en: { hours: 'Working hours: Monday to Friday, 8:30 - 18:00. Lunch break: 13:00 - 14:30', stHere: 'you are here', stGoal: 'destination', stCan: 'you can fly here', stOn: 'on your route', stNo: 'no direct flight', title: 'No connection', lead: 'The page you wanted will open by itself once you are back online.', hint: 'Meanwhile, a puzzle: fly from Astana to the yellow city by the shortest route. Tap cities joined by a line. Numbers on the lines are thousands of kilometres.', yours: 'Your route', unit: 'thousand km', best: 'That is the shortest route. Well done!', longer: 'There is a shorter route', how: 'How a computer searches', explain: 'A computer does not guess. It spreads out from Astana in every direction and always checks the nearest city first. The number by each city is the shortest way to it. Once the goal comes up, the answer is ready. Navigation apps find routes this way, and puzzles like this are where learning artificial intelligence begins.', again: 'Start over', skip: 'Another route', retry: 'Open the page again', still: 'Still no internet', score: 'Shortest routes found', map: 'Map of cities' },
   }[L]
   document.documentElement.lang = L === 'kz' ? 'kk' : L
   document.querySelectorAll('[data-t]').forEach((n) => (n.textContent = T[n.dataset.t]))
@@ -127,6 +130,7 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
     nodes = C.map((c, i) => {
       const [x, y, side] = at(i)
       const g = el('g', { class: 'city', tabindex: 0, role: 'button', 'aria-label': c[ix] }, cities)
+      el('rect', { class: 'hit', x: x - 22, y: y - 22, width: 44, height: 44 }, g)
       el('rect', { class: 'ring', x: x - 12, y: y - 12, width: 24, height: 24, rx: 5 }, g)
       el('rect', { x: x - 7, y: y - 7, width: 14, height: 14, rx: 2 }, g)
       const [dx, dy, an] = { t: [0, -16, 'middle'], b: [0, 26, 'middle'], l: [-15, 5, 'end'], r: [15, 5, 'start'], br: [12, 22, 'start'] }[side]
@@ -155,7 +159,13 @@ button{font:600 16px/24px system-ui,sans-serif;padding:12px 20px;border-radius:1
   const here = () => path[path.length - 1]
   const paint = () => {
     const can = finished ? [] : nb[here()].map(([v]) => v)
-    nodes.forEach((g, i) => { g.classList.toggle('on', path.includes(i)); g.classList.toggle('goal', i === goal && !path.includes(i)); g.classList.toggle('can', can.includes(i)) })
+    nodes.forEach((g, i) => {
+      g.classList.toggle('on', path.includes(i)); g.classList.toggle('goal', i === goal && !path.includes(i)); g.classList.toggle('can', can.includes(i))
+      const st = [i === here() ? T.stHere : path.includes(i) ? T.stOn : '', i === goal ? T.stGoal : '', can.includes(i) ? T.stCan : i !== here() && !finished ? T.stNo : ''].filter(Boolean)
+      g.setAttribute('aria-label', [C[i][ix], ...st].join(', '))
+      if (i === here()) g.setAttribute('aria-current', 'location'); else g.removeAttribute('aria-current')
+      g.setAttribute('aria-disabled', String(!can.includes(i)))
+    })
     roadEls.forEach((r, k) => r.classList.toggle('can', !finished && E[k].includes(here())))
     task.textContent = ''
     const a = document.createElement('b'); a.textContent = C[START][ix]; const i = document.createElement('i'); i.textContent = '→'; const b = document.createElement('b'); b.className = 'goal'; b.textContent = C[goal][ix]
