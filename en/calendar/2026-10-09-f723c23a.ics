@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Center for International Programs · Calendar
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-09-f723c23a-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:The "Ambassador of the Bolashak Programme" project is launching in 
+ the new academic year!
+DESCRIPTION:💬 Interviews: until 9 October 2026.\n\nhttps://stellasdeutsc
+ h-dev.github.io/bolashak-site/en/allnews/proekt-ambassador-programmy-bolas
+ hak-zapuskaetsya-v-novom-uchebnom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

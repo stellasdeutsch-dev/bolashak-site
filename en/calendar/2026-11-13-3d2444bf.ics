@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Center for International Programs · Calendar
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-11-13-3d2444bf-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Kazakhstan's Universities Presented with the Opportunities of Inter
+ national Education and Research Internships
+DESCRIPTION:We remind you that the deadline for submitting documents for th
+ e competitive selection under the "Research Internships" program has been 
+ extended to 13 November 2026.\n\nhttps://stellasdeutsch-dev.github.io/bola
+ shak-site/en/allnews/vuzam-kazahstana-prezentovali-vozmozhnosti-mezhdunaro
+ dnogo-obrazovaniya-i-nauchnyh-stazhirovok
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Center for International Programs · Calendar
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-30-229695c7-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Document Acceptance Has Started for the Bolashak and Research Inter
+ nships Programmes
+DESCRIPTION:The acceptance of documents for participation in the competitiv
+ e selection for the award of a scholarship under the "Research Internships
+ " programme will begin on 16 March and end on 30 October.\n\nhttps://stell
+ asdeutsch-dev.github.io/bolashak-site/en/allnews/startoval-priem-dokumento
+ v-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

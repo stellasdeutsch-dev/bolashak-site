@@ -5,4 +5,140 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Center for International Programs · Calendar
 X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-04-13-b1f3052e-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20270101
+SUMMARY:Document Acceptance Has Started for the Bolashak and Research Inter
+ nships Programmes
+DESCRIPTION:The competitive selection will be held during the period from 1
+ 3 April to 31 December 2026.\n\nhttps://stellasdeutsch-dev.github.io/bolas
+ hak-site/en/allnews/startoval-priem-dokumentov-po-programmam-bolashak-i-na
+ uchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-04-ee5876b2-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:The "Ambassador of the Bolashak Programme" project is launching in 
+ the new academic year!
+DESCRIPTION:📥 Acceptance of applications: until 4 October 2026\;\n\nhttp
+ s://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/proekt-ambassado
+ r-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-09-f723c23a-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:The "Ambassador of the Bolashak Programme" project is launching in 
+ the new academic year!
+DESCRIPTION:💬 Interviews: until 9 October 2026.\n\nhttps://stellasdeutsc
+ h-dev.github.io/bolashak-site/en/allnews/proekt-ambassador-programmy-bolas
+ hak-zapuskaetsya-v-novom-uchebnom-godu
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/proekt-am
+ bassador-programmy-bolashak-zapuskaetsya-v-novom-uchebnom-godu
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-16-b341c2a7-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:ANNOUNCEMENT. Bolashak International Scholarship
+DESCRIPTION:Applications for participation in the competition for the Bolas
+ hak scholarship can be submitted until 16 October 2026.\n\nhttps://stellas
+ deutsch-dev.github.io/bolashak-site/en/allnews/obyavlenie-mezhdunarodnaya-
+ stipendiya-bolashak
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/obyavleni
+ e-mezhdunarodnaya-stipendiya-bolashak
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-16-4087687e-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:Document Acceptance Has Started for the Bolashak and Research Inter
+ nships Programmes
+DESCRIPTION:The acceptance of documents for participation in the competitiv
+ e selection for the award of the Bolashak international scholarship will b
+ egin on 16 March and end on 16 October.\n\nhttps://stellasdeutsch-dev.gith
+ ub.io/bolashak-site/en/allnews/startoval-priem-dokumentov-po-programmam-bo
+ lashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-30-ae0f2852-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:ANNOUNCEMENT. "Research Internships" programme
+DESCRIPTION:Documents for participation in the competition for a research i
+ nternship abroad are accepted until 30 October 2026.\n\nhttps://stellasdeu
+ tsch-dev.github.io/bolashak-site/en/allnews/obyavlenie-programma-nauchnye-
+ stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/obyavleni
+ e-programma-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-10-30-229695c7-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Document Acceptance Has Started for the Bolashak and Research Inter
+ nships Programmes
+DESCRIPTION:The acceptance of documents for participation in the competitiv
+ e selection for the award of a scholarship under the "Research Internships
+ " programme will begin on 16 March and end on 30 October.\n\nhttps://stell
+ asdeutsch-dev.github.io/bolashak-site/en/allnews/startoval-priem-dokumento
+ v-po-programmam-bolashak-i-nauchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-13-3d2444bf-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Kazakhstan's Universities Presented with the Opportunities of Inter
+ national Education and Research Internships
+DESCRIPTION:We remind you that the deadline for submitting documents for th
+ e competitive selection under the "Research Internships" program has been 
+ extended to 13 November 2026.\n\nhttps://stellasdeutsch-dev.github.io/bola
+ shak-site/en/allnews/vuzam-kazahstana-prezentovali-vozmozhnosti-mezhdunaro
+ dnogo-obrazovaniya-i-nauchnyh-stazhirovok
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/vuzam-kaz
+ ahstana-prezentovali-vozmozhnosti-mezhdunarodnogo-obrazovaniya-i-nauchnyh-
+ stazhirovok
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-11-13-382e1ade-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:The deadline for submitting documents to the "Research Internships"
+  programme has been extended
+DESCRIPTION:We inform you that the deadline for submitting documents for th
+ e competitive selection under the "Research Internships" programme has bee
+ n extended until 13 November 2026.\n\nhttps://stellasdeutsch-dev.github.io
+ /bolashak-site/en/allnews/prodlen-srok-priema-dokumentov-na-programmu-nauc
+ hnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/prodlen-s
+ rok-priema-dokumentov-na-programmu-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
 END:VCALENDAR

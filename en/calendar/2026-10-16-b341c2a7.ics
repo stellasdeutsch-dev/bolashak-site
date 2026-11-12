@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Center for International Programs · Calendar
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-10-16-b341c2a7-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:ANNOUNCEMENT. Bolashak International Scholarship
+DESCRIPTION:Applications for participation in the competition for the Bolas
+ hak scholarship can be submitted until 16 October 2026.\n\nhttps://stellas
+ deutsch-dev.github.io/bolashak-site/en/allnews/obyavlenie-mezhdunarodnaya-
+ stipendiya-bolashak
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/obyavleni
+ e-mezhdunarodnaya-stipendiya-bolashak
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

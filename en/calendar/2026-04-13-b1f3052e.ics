@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bolashak.gov.kz//calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Center for International Programs · Calendar
+X-WR-TIMEZONE:Asia/Almaty
+BEGIN:VEVENT
+UID:2026-04-13-b1f3052e-en@bolashak.gov.kz
+DTSTAMP:20261112T073537Z
+DTSTART;VALUE=DATE:20260413
+DTEND;VALUE=DATE:20270101
+SUMMARY:Document Acceptance Has Started for the Bolashak and Research Inter
+ nships Programmes
+DESCRIPTION:The competitive selection will be held during the period from 1
+ 3 April to 31 December 2026.\n\nhttps://stellasdeutsch-dev.github.io/bolas
+ hak-site/en/allnews/startoval-priem-dokumentov-po-programmam-bolashak-i-na
+ uchnye-stazhirovki
+URL:https://stellasdeutsch-dev.github.io/bolashak-site/en/allnews/startoval
+ -priem-dokumentov-po-programmam-bolashak-i-nauchnye-stazhirovki
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
